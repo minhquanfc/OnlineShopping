@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".Fragments.HomeFragment"
+    android:orientation="vertical">
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="114dp"
+        android:background="@color/mau_xanh"
+        android:id="@+id/layout1">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv_shop"
+            android:text="Shop Online"
+            android:fontFamily="@font/lexenddeca"
+            android:textSize="26dp"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="20dp"/>
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/noti"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="20dp"/>
+    </RelativeLayout>
+    <AutoCompleteTextView
+        android:id="@+id/ed_search"
+        android:layout_width="335dp"
+        android:layout_height="40dp"
+        android:layout_below="@+id/layout1"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/bg_search"
+        android:completionThreshold="1"
+        android:layout_marginTop="-20dp"
+        android:drawableStart="@drawable/search"
+        android:fontFamily="@font/lexenddeca"
+        android:hint="Tìm kiếm"
+        android:inputType="text"
+        android:paddingLeft="20dp"
+        android:textColor="@color/skip"
+        android:textSize="13dp"
+        android:textStyle="bold" />
+    <com.denzcoskun.imageslider.ImageSlider
+        android:id="@+id/img_slide"
+        android:layout_width="match_parent"
+        android:layout_height="160dp"
+        android:layout_below="@+id/ed_search"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp" />
+
+    <TextView
+        android:id="@+id/tv_danhmuc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/img_slide"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/lexenddeca"
+        android:text="Danh mục"
+        android:textColor="@color/black"
+        android:textSize="14dp"
+        android:textStyle="bold" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rcview_danhmuc"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_below="@+id/tv_danhmuc"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rcview_danhmuc"
+        android:orientation="horizontal"
+        android:id="@+id/dienthoai">
+        <TextView
+            android:id="@+id/tv_dienthoai"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Điện thoại"
+            android:fontFamily="@font/lexenddeca"
+            android:textSize="14dp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:layout_marginLeft="20dp"
+            android:layout_alignParentLeft="true"/>
+        <TextView
+            android:id="@+id/tv_giamgia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="(10% Off)"
+            android:fontFamily="@font/lexenddeca"
+            android:textSize="14dp"
+            android:textStyle="bold"
+            android:textColor="@color/mau_xanh"
+            android:layout_marginLeft="10dp"/>
+
+        <TextView
+            android:id="@+id/tv_xemthem_dienthoai"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="145dp"
+            android:fontFamily="@font/lexenddeca"
+            android:text="Xem thêm"
+            android:textColor="@color/mau_vang"
+            android:textSize="14dp"
+            android:textStyle="bold" />
+    </LinearLayout>
+    <TextView
+        android:id="@+id/tv_dienthoainoibat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Điện thoại nổi bật nhất"
+        android:fontFamily="@font/lexenddeca"
+        android:textSize="12dp"
+        android:textColor="@color/black"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/dienthoai"/>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rcview_dienthoai"
+        android:layout_width="match_parent"
+        android:layout_height="260dp"
+        android:layout_below="@+id/tv_dienthoainoibat"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="20dp"/>
+</RelativeLayout>
+
+</androidx.core.widget.NestedScrollView>
