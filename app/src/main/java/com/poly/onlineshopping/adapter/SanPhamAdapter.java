@@ -33,9 +33,9 @@ public class SanPhamAdapter extends RecyclerView.Adapter<SanPhamHolder> {
     @Override
     public void onBindViewHolder(@NonNull SanPhamHolder holder, int position) {
         SanPham sanPham = sanPhamList.get(position);
-        holder.tv_ten_sanpham.setText(sanPham.getTen());
-        holder.tv_gia_sanpham.setText(String.valueOf(sanPham.getGia()));
-        Glide.with(holder.img_sanpham).load(sanPham.getImg()).into(holder.img_sanpham);
+        holder.tv_ten_sanpham.setText(sanPham.getTensanpham());
+        holder.tv_gia_sanpham.setText(String.valueOf(sanPham.getGiasanpham()));
+        Glide.with(holder.img_sanpham).load(sanPham.getAnhsanpham()).into(holder.img_sanpham);
     }
 
     @Override

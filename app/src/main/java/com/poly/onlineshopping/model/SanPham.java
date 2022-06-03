@@ -2,21 +2,21 @@ package com.poly.onlineshopping.model;
 
 public class SanPham {
     public String id;
-    public String ten;
-    public int gia;
+    public String tensanpham;
+    public int giasanpham;
     public String mota;
-    public String img;
+    public String anhsanpham;
     public String loai;
 
     public SanPham() {
     }
 
-    public SanPham(String id, String ten, int gia, String mota, String img, String loai) {
+    public SanPham(String id, String tensanpham, int giasanpham, String mota, String anhsanpham, String loai) {
         this.id = id;
-        this.ten = ten;
-        this.gia = gia;
+        this.tensanpham = tensanpham;
+        this.giasanpham = giasanpham;
         this.mota = mota;
-        this.img = img;
+        this.anhsanpham = anhsanpham;
         this.loai = loai;
     }
 
@@ -28,20 +28,20 @@ public class SanPham {
         this.id = id;
     }
 
-    public String getTen() {
-        return ten;
+    public String getTensanpham() {
+        return tensanpham;
     }
 
-    public void setTen(String ten) {
-        this.ten = ten;
+    public void setTensanpham(String tensanpham) {
+        this.tensanpham = tensanpham;
     }
 
-    public int getGia() {
-        return gia;
+    public int getGiasanpham() {
+        return giasanpham;
     }
 
-    public void setGia(int gia) {
-        this.gia = gia;
+    public void setGiasanpham(int giasanpham) {
+        this.giasanpham = giasanpham;
     }
 
     public String getMota() {
@@ -52,12 +52,12 @@ public class SanPham {
         this.mota = mota;
     }
 
-    public String getImg() {
-        return img;
+    public String getAnhsanpham() {
+        return anhsanpham;
     }
 
-    public void setImg(String img) {
-        this.img = img;
+    public void setAnhsanpham(String anhsanpham) {
+        this.anhsanpham = anhsanpham;
     }
 
     public String getLoai() {

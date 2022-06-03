@@ -10,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AutoCompleteTextView;
+import android.widget.Toast;
 
 import com.denzcoskun.imageslider.ImageSlider;
 import com.denzcoskun.imageslider.constants.ScaleTypes;
@@ -17,11 +18,19 @@ import com.denzcoskun.imageslider.models.SlideModel;
 import com.poly.onlineshopping.R;
 import com.poly.onlineshopping.adapter.DanhMucAdapter;
 import com.poly.onlineshopping.adapter.SanPhamAdapter;
+import com.poly.onlineshopping.api.ApiService;
+import com.poly.onlineshopping.model.Banner;
 import com.poly.onlineshopping.model.DanhMuc;
 import com.poly.onlineshopping.model.SanPham;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 
 
 public class HomeFragment extends Fragment {
@@ -32,6 +41,7 @@ public class HomeFragment extends Fragment {
 
     List<DanhMuc> danhMucList;
     List<SanPham> sanPhamList;
+    List<Banner> bannerList;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -42,6 +52,7 @@ public class HomeFragment extends Fragment {
         rcview_danhmuc = view.findViewById(R.id.rcview_danhmuc);
         danhMucList = new ArrayList<>();
         sanPhamList = new ArrayList<>();
+        bannerList = new ArrayList<>();
 
         //SliderPhoto
         SliderPhoto();
@@ -54,16 +65,33 @@ public class HomeFragment extends Fragment {
     }
 
     private void getSanPham() {
-        sanPhamList.add(new SanPham("1","Iphone 13",686868,"iphone 13 2021","https://firebasestorage.googleapis.com/v0/b/onlineshop-1831d.appspot.com/o/dienthoai%2Fsamsung-galaxy-z-flip-3-violet-1-600x600.jpg?alt=media&token=2c9ca89f-ad0a-4ee8-8dbe-850f1262fa3c","dienthoai"));
-        sanPhamList.add(new SanPham("2","Iphone 13",686868,"iphone 13 2021","https://firebasestorage.googleapis.com/v0/b/onlineshop-1831d.appspot.com/o/dienthoai%2Fsamsung-galaxy-z-flip-3-violet-1-600x600.jpg?alt=media&token=2c9ca89f-ad0a-4ee8-8dbe-850f1262fa3c","dienthoai"));
-        sanPhamList.add(new SanPham("3","Iphone 13",686868,"iphone 13 2021","https://firebasestorage.googleapis.com/v0/b/onlineshop-1831d.appspot.com/o/dienthoai%2Fsamsung-galaxy-z-flip-3-violet-1-600x600.jpg?alt=media&token=2c9ca89f-ad0a-4ee8-8dbe-850f1262fa3c","dienthoai"));
-        sanPhamList.add(new SanPham("4","Iphone 13",686868,"iphone 13 2021","https://firebasestorage.googleapis.com/v0/b/onlineshop-1831d.appspot.com/o/dienthoai%2Fsamsung-galaxy-z-flip-3-violet-1-600x600.jpg?alt=media&token=2c9ca89f-ad0a-4ee8-8dbe-850f1262fa3c","dienthoai"));
-        sanPhamList.add(new SanPham("5","Iphone 13",686868,"iphone 13 2021","https://firebasestorage.googleapis.com/v0/b/onlineshop-1831d.appspot.com/o/dienthoai%2Fsamsung-galaxy-z-flip-3-violet-1-600x600.jpg?alt=media&token=2c9ca89f-ad0a-4ee8-8dbe-850f1262fa3c","dienthoai"));
 
         SanPhamAdapter sanPhamAdapter = new SanPhamAdapter(getContext(),sanPhamList);
         rcview_dienthoai.setAdapter(sanPhamAdapter);
         LinearLayoutManager layoutManagerSanPham = new LinearLayoutManager(getContext(),RecyclerView.HORIZONTAL,false);
         rcview_dienthoai.setLayoutManager(layoutManagerSanPham);
+
+        Retrofit retrofit = new  Retrofit.Builder()
+                .baseUrl("http://192.168.1.243:3000/api/")
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+        ApiService apiService = retrofit.create(ApiService.class);
+        Call<List<SanPham>> call = apiService.getSanPham();
+        call.enqueue(new Callback<List<SanPham>>() {
+            @Override
+            public void onResponse(Call<List<SanPham>> call, Response<List<SanPham>> response) {
+                if (response.isSuccessful() && response.body() !=null)
+                {
+                    sanPhamList.addAll(response.body());
+                    sanPhamAdapter.notifyDataSetChanged();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<List<SanPham>> call, Throwable t) {
+                Toast.makeText(getContext(), "Loi api", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     private void GetDanhMuc() {
@@ -80,14 +108,37 @@ public class HomeFragment extends Fragment {
     }
 
     private void SliderPhoto() {
-        List<SlideModel> slideModels = new ArrayList<SlideModel>();
-        slideModels.add(new SlideModel("https://cdn.tgdd.vn/2022/05/banner/720-220-720x220-179.png", ScaleTypes.FIT));
-        slideModels.add(new SlideModel("https://cdn.tgdd.vn/2022/05/banner/flip3-720-220-720x220.png", ScaleTypes.FIT));
-        slideModels.add(new SlideModel("https://cdn.tgdd.vn/2022/05/banner/720-220-720x220-157.png", ScaleTypes.FIT));
-        slideModels.add(new SlideModel("https://cdn.tgdd.vn/2022/05/banner/720-220-720x220-157.png", ScaleTypes.FIT));
-        slideModels.add(new SlideModel("https://cdn.tgdd.vn/2022/05/banner/720-220-720x220-157.png", ScaleTypes.FIT));
+        List<SlideModel> banners = new ArrayList<SlideModel>();
+        banners.add(new SlideModel("https://cdn.tgdd.vn/2022/05/banner/720-220-720x220-179.png", ScaleTypes.FIT));
+        banners.add(new SlideModel("https://cdn.tgdd.vn/2022/05/banner/flip3-720-220-720x220.png", ScaleTypes.FIT));
+        banners.add(new SlideModel("https://cdn.tgdd.vn/2022/05/banner/720-220-720x220-157.png", ScaleTypes.FIT));
+        banners.add(new SlideModel("https://cdn.tgdd.vn/2022/05/banner/720-220-720x220-157.png", ScaleTypes.FIT));
+        banners.add(new SlideModel("https://cdn.tgdd.vn/2022/05/banner/720-220-720x220-157.png", ScaleTypes.FIT));
 
-        img_slide.setImageList(slideModels,ScaleTypes.CENTER_CROP);
+        img_slide.setImageList(banners,ScaleTypes.CENTER_CROP);
         img_slide.startSliding(3000);
+
+        Retrofit retrofit =new Retrofit.Builder()
+                .baseUrl("http://192.168.1.243:3000/api/")
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+        ApiService apiService = retrofit.create(ApiService.class);
+        Call<List<Banner>> call = apiService.getBanner();
+        call.enqueue(new Callback<List<Banner>>() {
+            @Override
+            public void onResponse(Call<List<Banner>> call, Response<List<Banner>> response) {
+                if (response.isSuccessful() && response.body() !=null)
+                {
+
+                } else {
+                    Toast.makeText(getContext(), "Không lấy được dữ liệu banner", Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<List<Banner>> call, Throwable t) {
+
+            }
+        });
     }
 }
