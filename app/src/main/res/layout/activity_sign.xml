@@ -123,4 +123,14 @@
                 android:textStyle="bold" />
         </LinearLayout>
     </LinearLayout>
+    <com.github.ybq.android.spinkit.SpinKitView
+        android:id="@+id/progressbar_sign_up"
+        style="@style/SpinKitView.Large.Circle"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_gravity="center"
+        app:SpinKit_Color="@color/mau_xanh"
+        android:background="@drawable/bg_progressbar"
+        android:layout_centerInParent="true"
+        tools:ignore="MissingClass" />
 </RelativeLayout>

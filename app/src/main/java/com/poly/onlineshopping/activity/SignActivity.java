@@ -4,20 +4,27 @@ import static android.content.ContentValues.TAG;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.github.ybq.android.spinkit.sprite.Sprite;
+import com.github.ybq.android.spinkit.style.Circle;
 import com.poly.onlineshopping.R;
 import com.poly.onlineshopping.api.ApiService;
 import com.poly.onlineshopping.model.Users;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.regex.Pattern;
 
 import retrofit2.Call;
@@ -31,6 +38,8 @@ public class SignActivity extends AppCompatActivity {
     EditText ed_hoten_signin,ed_email_signin,ed_password_signin,ed_sdt_signin,ed_diachi_signin;
     Button btn_signin;
     TextView tv_dangnhap_signin;
+    ProgressBar progressBar;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,6 +51,11 @@ public class SignActivity extends AppCompatActivity {
         ed_diachi_signin = findViewById(R.id.ed_diachi_signin);
         btn_signin = findViewById(R.id.btn_signin);
         tv_dangnhap_signin = findViewById(R.id.tv_dangnhap_signin);
+        progressBar = (ProgressBar) findViewById(R.id.progressbar_sign_up);
+        Sprite doubleBounce = new Circle();
+        progressBar.setIndeterminateDrawable(doubleBounce);
+        progressBar.setVisibility(View.GONE);
+
         btn_signin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -60,6 +74,12 @@ public class SignActivity extends AppCompatActivity {
                     Toast.makeText(SignActivity.this, "Mật khẩu phải dài hơn 6 ký tự", Toast.LENGTH_SHORT).show();
                     return;
                 }
+//                Users users;
+//                if (users.getEmail() == email) {
+//                    Toast.makeText(SignActivity.this, "Email đã được đăng ký", Toast.LENGTH_SHORT).show();
+//                    return;
+//                }
+                progressBar.setVisibility(View.VISIBLE);
                 postReg(ten,email,pass,sdt,diachi);
             }
         });
@@ -80,7 +100,7 @@ public class SignActivity extends AppCompatActivity {
 
     private void postReg(String ten,String email,String password,String sodienthoai,String diachi) {
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://192.168.1.243:3000/api/users/")
+                .baseUrl("https://adminshop68.herokuapp.com/api/users/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
         ApiService apiService = retrofit.create(ApiService.class);
@@ -97,9 +117,11 @@ public class SignActivity extends AppCompatActivity {
                     ed_sdt_signin.setText("");
                     Users responseFromAPI = response.body();
                     Toast.makeText(SignActivity.this, "Đăng ký thành công", Toast.LENGTH_SHORT).show();
+                    progressBar.setVisibility(View.GONE);
                     Intent intent = new Intent(SignActivity.this,LoginActivity.class);
                     startActivity(intent);
                 } else {
+                    progressBar.setVisibility(View.GONE);
                     Toast.makeText(SignActivity.this, "Đăng ký không thành công", Toast.LENGTH_SHORT).show();
                 }
             }

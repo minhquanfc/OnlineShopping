@@ -72,7 +72,7 @@ public class HomeFragment extends Fragment {
         rcview_dienthoai.setLayoutManager(layoutManagerSanPham);
 
         Retrofit retrofit = new  Retrofit.Builder()
-                .baseUrl("http://192.168.1.243:3000/api/")
+                .baseUrl("https://adminshop68.herokuapp.com/api/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
         ApiService apiService = retrofit.create(ApiService.class);

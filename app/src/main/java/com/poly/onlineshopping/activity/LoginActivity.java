@@ -7,9 +7,12 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.github.ybq.android.spinkit.sprite.Sprite;
+import com.github.ybq.android.spinkit.style.Circle;
 import com.poly.onlineshopping.MainActivity;
 import com.poly.onlineshopping.R;
 import com.poly.onlineshopping.api.ApiService;
@@ -30,6 +33,7 @@ public class LoginActivity extends AppCompatActivity {
     EditText ed_email_login,ed_pass_login;
     Button btn_login;
     TextView tv_dangky_login;
+    ProgressBar progressBar;
 
     List<Users> usersList;
     String token = null;
@@ -41,6 +45,10 @@ public class LoginActivity extends AppCompatActivity {
         ed_pass_login = findViewById(R.id.ed_password_login);
         btn_login = findViewById(R.id.btn_login);
         tv_dangky_login = findViewById(R.id.tv_dangky_login);
+         progressBar = (ProgressBar) findViewById(R.id.progressbar_sign_in);
+        Sprite doubleBounce = new Circle();
+        progressBar.setIndeterminateDrawable(doubleBounce);
+        progressBar.setVisibility(View.GONE);
 
         btn_login.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -52,6 +60,7 @@ public class LoginActivity extends AppCompatActivity {
                     Toast.makeText(LoginActivity.this, "Vui lòng nhập thông tin", Toast.LENGTH_SHORT).show();
                     return;
                 }
+                progressBar.setVisibility(View.VISIBLE);
                 getData(email,password);
             }
         });
@@ -66,7 +75,7 @@ public class LoginActivity extends AppCompatActivity {
 
     private void getData(String email,String password) {
         Retrofit retrofit = new  Retrofit.Builder()
-                .baseUrl("http://192.168.1.243:3000/api/users/")
+                .baseUrl("https://adminshop68.herokuapp.com/api/users/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
         ApiService apiService = retrofit.create(ApiService.class);
@@ -81,10 +90,12 @@ public class LoginActivity extends AppCompatActivity {
                     if (token !=null){
                         Intent intent = new Intent(LoginActivity.this,MainActivity.class);
                         startActivity(intent);
+                        progressBar.setVisibility(View.GONE);
                         Toast.makeText(LoginActivity.this, "Đăng nhập thành công", Toast.LENGTH_SHORT).show();
-                    }else {
-                        Toast.makeText(LoginActivity.this, "Đăng nhập không thành công", Toast.LENGTH_SHORT).show();
                     }
+                }else {
+                    progressBar.setVisibility(View.GONE);
+                    Toast.makeText(LoginActivity.this, "Đăng nhập không thành công", Toast.LENGTH_SHORT).show();
                 }
             }
 
