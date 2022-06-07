@@ -52,136 +52,173 @@
 
         </RelativeLayout>
 
+
+<!--        <ScrollView-->
+<!--            android:id="@+id/scrollView"-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="1600dp"-->
+<!--            android:layout_marginStart="16dp"-->
+<!--            android:layout_marginLeft="16dp"-->
+<!--            android:layout_marginTop="16dp"-->
+<!--            android:layout_marginEnd="16dp"-->
+<!--            android:layout_marginRight="16dp"-->
+<!--            >-->
+
+
         <Button
-            android:id="@+id/btn_DonHang"
-            android:layout_width="match_parent"
-            android:layout_height="55dp"
-            android:layout_below="@+id/bgr"
-            android:background="@color/white"
-            android:drawableLeft="@drawable/shopping2"
-            android:padding="16dp"
-            android:text="Đơn hàng của tôi"
-            android:textColor="@color/black"
-            android:textSize="15dp" />
-        <View
-            android:layout_below="@+id/btn_DonHang"
-            android:layout_width="fill_parent"
-            android:layout_height="1dp"
-            android:background="#c0c0c0"/>
-        <Button
-            android:layout_marginTop="5dp"
-            android:id="@+id/btn_YeuThich"
-            android:layout_width="match_parent"
-            android:layout_height="55dp"
-            android:layout_below="@+id/btn_DonHang"
-            android:background="@color/white"
-            android:drawableLeft="@drawable/yeuthich"
-            android:text="Yêu thích"
-            android:padding="16dp"
-            android:textColor="@color/black"
-            android:textSize="15dp" />
-        <View
-            android:layout_below="@+id/btn_YeuThich"
-            android:layout_width="fill_parent"
-            android:layout_height="1dp"
-            android:background="#c0c0c0"/>
-        <Button
-            android:id="@+id/btn_Caidat"
-            android:layout_marginTop="5dp"
-            android:layout_width="match_parent"
-            android:layout_height="55dp"
-            android:layout_below="@+id/btn_YeuThich"
-            android:background="@color/white"
-            android:drawableLeft="@drawable/caidat"
-            android:text="Cài đặt"
-            android:padding="16dp"
-            android:textColor="@color/black"
-            android:textSize="15dp" />
-        <View
-            android:layout_below="@+id/btn_Caidat"
-            android:layout_width="fill_parent"
-            android:layout_height="1dp"
-            android:background="#c0c0c0"/>
-        <Button
-            android:id="@+id/btn_GioHang"
-            android:layout_marginTop="5dp"
-            android:layout_width="match_parent"
-            android:layout_height="55dp"
-            android:layout_below="@+id/btn_Caidat"
-            android:background="@color/white"
-            android:drawableLeft="@drawable/shopping3"
-            android:text="Giỏ hàng"
-            android:padding="16dp"
-            android:textColor="@color/black"
-            android:textSize="15dp" />
-        <View
-            android:layout_below="@+id/btn_GioHang"
-            android:layout_width="fill_parent"
-            android:layout_height="1dp"
-            android:background="#c0c0c0"/>
-        <Button
-            android:id="@+id/btn_Danhgia"
-            android:layout_marginTop="5dp"
-            android:layout_width="match_parent"
-            android:layout_height="55dp"
-            android:layout_below="@+id/btn_GioHang"
-            android:background="@color/white"
-            android:drawableLeft="@drawable/danhgia"
-            android:text="Đánh giá"
-            android:padding="16dp"
-            android:textColor="@color/black"
-            android:textSize="15dp" />
-        <View
-            android:layout_below="@+id/btn_Danhgia"
-            android:layout_width="fill_parent"
-            android:layout_height="1dp"
-            android:background="#c0c0c0"/>
-        <Button
-            android:id="@+id/btn_Gioithieu"
-            android:layout_marginTop="5dp"
-            android:layout_width="match_parent"
-            android:layout_height="55dp"
-            android:layout_below="@+id/btn_Danhgia"
-            android:background="@color/white"
-            android:drawableLeft="@drawable/chiase"
-            android:text="Giới thiệu"
-            android:padding="16dp"
-            android:textColor="@color/black"
-            android:textSize="15dp" />
-        <View
-            android:layout_below="@+id/btn_Gioithieu"
-            android:layout_width="fill_parent"
-            android:layout_height="1dp"
-            android:background="#c0c0c0"/>
-        <Button
-            android:id="@+id/btn_Hotro"
-            android:layout_marginTop="5dp"
-            android:layout_width="match_parent"
-            android:layout_height="55dp"
-            android:layout_below="@+id/btn_Gioithieu"
-            android:background="@color/white"
-            android:drawableLeft="@drawable/question"
-            android:text="Hỗ trợ"
-            android:padding="16dp"
-            android:textColor="@color/black"
-            android:textSize="15dp" />
-        <View
-            android:layout_below="@+id/btn_Hotro"
-            android:layout_width="fill_parent"
-            android:layout_height="1dp"
-            android:background="#c0c0c0"/>
-        <Button
-            android:id="@+id/btn_Dangxuat"
-            android:layout_marginTop="5dp"
-            android:layout_width="match_parent"
-            android:layout_height="55dp"
-            android:layout_below="@+id/btn_Hotro"
-            android:background="@color/white"
-            android:drawableLeft="@drawable/dangxuat"
-            android:text="Đăng xuất"
-            android:padding="16dp"
-            android:textColor="@color/black"
-            android:textSize="15dp" />
+                android:id="@+id/btn_DonHang"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:layout_below="@+id/bgr"
+                android:background="@color/white"
+                android:drawableLeft="@drawable/shopping2"
+                android:gravity="left"
+                android:padding="16dp"
+                android:text="   Đơn hàng của tôi"
+                android:textColor="@color/black"
+                android:textSize="15dp" />
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:layout_below="@+id/btn_DonHang"
+                android:background="#c0c0c0" />
+
+            <Button
+                android:id="@+id/btn_YeuThich"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:layout_below="@+id/btn_DonHang"
+                android:layout_marginTop="5dp"
+                android:background="@color/white"
+                android:drawableLeft="@drawable/yeuthich"
+                android:gravity="left"
+                android:padding="16dp"
+                android:text="   Yêu thích"
+                android:textColor="@color/black"
+                android:textSize="15dp" />
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:layout_below="@+id/btn_YeuThich"
+                android:background="#c0c0c0" />
+
+            <Button
+                android:id="@+id/btn_Caidat"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:layout_below="@+id/btn_YeuThich"
+                android:layout_marginTop="5dp"
+                android:background="@color/white"
+                android:drawableLeft="@drawable/caidat"
+                android:gravity="left"
+                android:padding="16dp"
+                android:text="   Cài đặt"
+                android:textColor="@color/black"
+                android:textSize="15dp" />
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:layout_below="@+id/btn_Caidat"
+                android:background="#c0c0c0" />
+
+            <Button
+                android:id="@+id/btn_GioHang"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:layout_below="@+id/btn_Caidat"
+                android:layout_marginTop="5dp"
+                android:background="@color/white"
+                android:drawableLeft="@drawable/shopping3"
+                android:gravity="left"
+                android:padding="16dp"
+                android:text="   Giỏ hàng"
+                android:textColor="@color/black"
+                android:textSize="15dp" />
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:layout_below="@+id/btn_GioHang"
+                android:background="#c0c0c0" />
+
+            <Button
+                android:id="@+id/btn_Danhgia"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:layout_below="@+id/btn_GioHang"
+                android:layout_marginTop="5dp"
+                android:background="@color/white"
+                android:drawableLeft="@drawable/danhgia"
+                android:gravity="left"
+                android:padding="16dp"
+                android:text="   Đánh giá"
+                android:textColor="@color/black"
+                android:textSize="15dp" />
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:layout_below="@+id/btn_Danhgia"
+                android:background="#c0c0c0" />
+
+            <Button
+                android:id="@+id/btn_Gioithieu"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:layout_below="@+id/btn_Danhgia"
+                android:layout_marginTop="5dp"
+                android:background="@color/white"
+                android:drawableLeft="@drawable/chiase"
+                android:gravity="left"
+                android:padding="16dp"
+                android:text="   Giới thiệu"
+                android:textColor="@color/black"
+                android:textSize="15dp" />
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:layout_below="@+id/btn_Gioithieu"
+                android:background="#c0c0c0" />
+
+            <Button
+                android:id="@+id/btn_Hotro"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:layout_below="@+id/btn_Gioithieu"
+                android:layout_marginTop="5dp"
+                android:background="@color/white"
+                android:drawableLeft="@drawable/question"
+                android:gravity="left"
+                android:padding="16dp"
+                android:text="   Hỗ trợ"
+                android:textColor="@color/black"
+                android:textSize="15dp" />
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:layout_below="@+id/btn_Hotro"
+                android:background="#c0c0c0" />
+
+            <Button
+                android:id="@+id/btn_Dangxuat"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:layout_below="@+id/btn_Hotro"
+                android:layout_marginTop="5dp"
+                android:background="@color/white"
+                android:drawableLeft="@drawable/dangxuat"
+                android:gravity="left"
+                android:padding="16dp"
+                android:text="   Đăng xuất"
+                android:textColor="@color/black"
+                android:textSize="15dp" />
+<!--        </ScrollView>-->
+
     </RelativeLayout>
 
 </FrameLayout>
