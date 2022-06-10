@@ -9,16 +9,16 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/frame_layout"/>
+
     <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/navigation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:id="@+id/navigation"
-        app:menu="@menu/bottom_nav"
         android:background="@color/white"
-        app:itemTextColor="@color/color_bottomnav"
-        app:itemIconTint="@color/color_bottomnav"
         android:foreground="?attr/selectableItemBackground"
-        />
+        app:itemIconTint="@color/color_bottomnav"
+        app:itemTextColor="@color/color_bottomnav"
+        app:menu="@menu/bottom_nav" />
 
 </RelativeLayout>

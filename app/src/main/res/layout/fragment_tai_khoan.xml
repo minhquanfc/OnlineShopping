@@ -66,17 +66,17 @@
 
 
         <Button
-                android:id="@+id/btn_DonHang"
-                android:layout_width="match_parent"
-                android:layout_height="55dp"
-                android:layout_below="@+id/bgr"
-                android:background="@color/white"
-                android:drawableLeft="@drawable/shopping2"
-                android:gravity="left"
-                android:padding="16dp"
-                android:text="   Đơn hàng của tôi"
-                android:textColor="@color/black"
-                android:textSize="15dp" />
+            android:id="@+id/btn_DonHang"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_below="@+id/bgr"
+            android:background="@color/white"
+            android:drawableLeft="@drawable/shopping2"
+            android:gravity="left"
+            android:padding="16dp"
+            android:text="   Đơn hàng của tôi"
+            android:textColor="@color/black"
+            android:textSize="15dp" />
 
             <View
                 android:layout_width="fill_parent"
@@ -84,21 +84,21 @@
                 android:layout_below="@+id/btn_DonHang"
                 android:background="#c0c0c0" />
 
-            <Button
-                android:id="@+id/btn_YeuThich"
-                android:layout_width="match_parent"
-                android:layout_height="55dp"
-                android:layout_below="@+id/btn_DonHang"
-                android:layout_marginTop="5dp"
-                android:background="@color/white"
-                android:drawableLeft="@drawable/yeuthich"
-                android:gravity="left"
-                android:padding="16dp"
-                android:text="   Yêu thích"
-                android:textColor="@color/black"
-                android:textSize="15dp" />
+        <Button
+            android:id="@+id/btn_YeuThich"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_below="@+id/btn_DonHang"
+            android:layout_marginTop="4dp"
+            android:background="@color/white"
+            android:drawableLeft="@drawable/yeuthich"
+            android:gravity="left"
+            android:padding="16dp"
+            android:text="   Yêu thích"
+            android:textColor="@color/black"
+            android:textSize="15dp" />
 
-            <View
+        <View
                 android:layout_width="fill_parent"
                 android:layout_height="1dp"
                 android:layout_below="@+id/btn_YeuThich"
@@ -107,7 +107,7 @@
             <Button
                 android:id="@+id/btn_Caidat"
                 android:layout_width="match_parent"
-                android:layout_height="55dp"
+                android:layout_height="50dp"
                 android:layout_below="@+id/btn_YeuThich"
                 android:layout_marginTop="5dp"
                 android:background="@color/white"
@@ -127,7 +127,7 @@
             <Button
                 android:id="@+id/btn_GioHang"
                 android:layout_width="match_parent"
-                android:layout_height="55dp"
+                android:layout_height="50dp"
                 android:layout_below="@+id/btn_Caidat"
                 android:layout_marginTop="5dp"
                 android:background="@color/white"
@@ -147,7 +147,7 @@
             <Button
                 android:id="@+id/btn_Danhgia"
                 android:layout_width="match_parent"
-                android:layout_height="55dp"
+                android:layout_height="50dp"
                 android:layout_below="@+id/btn_GioHang"
                 android:layout_marginTop="5dp"
                 android:background="@color/white"
@@ -167,7 +167,7 @@
             <Button
                 android:id="@+id/btn_Gioithieu"
                 android:layout_width="match_parent"
-                android:layout_height="55dp"
+                android:layout_height="50dp"
                 android:layout_below="@+id/btn_Danhgia"
                 android:layout_marginTop="5dp"
                 android:background="@color/white"
@@ -187,7 +187,7 @@
             <Button
                 android:id="@+id/btn_Hotro"
                 android:layout_width="match_parent"
-                android:layout_height="55dp"
+                android:layout_height="50dp"
                 android:layout_below="@+id/btn_Gioithieu"
                 android:layout_marginTop="5dp"
                 android:background="@color/white"
@@ -207,7 +207,7 @@
             <Button
                 android:id="@+id/btn_Dangxuat"
                 android:layout_width="match_parent"
-                android:layout_height="55dp"
+                android:layout_height="50dp"
                 android:layout_below="@+id/btn_Hotro"
                 android:layout_marginTop="5dp"
                 android:background="@color/white"
