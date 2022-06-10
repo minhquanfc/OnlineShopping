@@ -35,9 +35,10 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="160dp"
                 android:layout_marginTop="150dp"
+                android:fontFamily="@font/lexenddeca"
                 android:text="Nhóm 5"
                 android:textColor="@color/white"
-                android:textSize="25dp"
+                android:textSize="26dp"
                 android:textStyle="bold" />
 
             <TextView
@@ -45,6 +46,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="130dp"
                 android:layout_marginTop="190dp"
+                android:fontFamily="@font/lexenddeca"
                 android:text="admin@gmail.com"
                 android:textColor="@color/white"
                 android:textSize="18dp"
@@ -72,11 +74,13 @@
             android:layout_below="@+id/bgr"
             android:background="@color/white"
             android:drawableLeft="@drawable/shopping2"
+
+            android:fontFamily="@font/lexenddeca"
             android:gravity="left"
             android:padding="16dp"
             android:text="   Đơn hàng của tôi"
             android:textColor="@color/black"
-            android:textSize="15dp" />
+            android:textSize="14dp" />
 
             <View
                 android:layout_width="fill_parent"
@@ -88,6 +92,7 @@
             android:id="@+id/btn_YeuThich"
             android:layout_width="match_parent"
             android:layout_height="50dp"
+            android:fontFamily="@font/lexenddeca"
             android:layout_below="@+id/btn_DonHang"
             android:layout_marginTop="4dp"
             android:background="@color/white"
@@ -96,7 +101,7 @@
             android:padding="16dp"
             android:text="   Yêu thích"
             android:textColor="@color/black"
-            android:textSize="15dp" />
+            android:textSize="14dp" />
 
         <View
                 android:layout_width="fill_parent"
@@ -108,6 +113,7 @@
                 android:id="@+id/btn_Caidat"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
+                android:fontFamily="@font/lexenddeca"
                 android:layout_below="@+id/btn_YeuThich"
                 android:layout_marginTop="5dp"
                 android:background="@color/white"
@@ -116,7 +122,7 @@
                 android:padding="16dp"
                 android:text="   Cài đặt"
                 android:textColor="@color/black"
-                android:textSize="15dp" />
+                android:textSize="14dp" />
 
             <View
                 android:layout_width="fill_parent"
@@ -128,6 +134,7 @@
                 android:id="@+id/btn_GioHang"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
+                android:fontFamily="@font/lexenddeca"
                 android:layout_below="@+id/btn_Caidat"
                 android:layout_marginTop="5dp"
                 android:background="@color/white"
@@ -136,7 +143,7 @@
                 android:padding="16dp"
                 android:text="   Giỏ hàng"
                 android:textColor="@color/black"
-                android:textSize="15dp" />
+                android:textSize="14dp" />
 
             <View
                 android:layout_width="fill_parent"
@@ -149,6 +156,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_below="@+id/btn_GioHang"
+                android:fontFamily="@font/lexenddeca"
                 android:layout_marginTop="5dp"
                 android:background="@color/white"
                 android:drawableLeft="@drawable/danhgia"
@@ -156,7 +164,7 @@
                 android:padding="16dp"
                 android:text="   Đánh giá"
                 android:textColor="@color/black"
-                android:textSize="15dp" />
+                android:textSize="14dp" />
 
             <View
                 android:layout_width="fill_parent"
@@ -168,6 +176,7 @@
                 android:id="@+id/btn_Gioithieu"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
+                android:fontFamily="@font/lexenddeca"
                 android:layout_below="@+id/btn_Danhgia"
                 android:layout_marginTop="5dp"
                 android:background="@color/white"
@@ -176,7 +185,7 @@
                 android:padding="16dp"
                 android:text="   Giới thiệu"
                 android:textColor="@color/black"
-                android:textSize="15dp" />
+                android:textSize="14dp" />
 
             <View
                 android:layout_width="fill_parent"
@@ -190,13 +199,14 @@
                 android:layout_height="50dp"
                 android:layout_below="@+id/btn_Gioithieu"
                 android:layout_marginTop="5dp"
+                android:fontFamily="@font/lexenddeca"
                 android:background="@color/white"
                 android:drawableLeft="@drawable/question"
                 android:gravity="left"
                 android:padding="16dp"
                 android:text="   Hỗ trợ"
                 android:textColor="@color/black"
-                android:textSize="15dp" />
+                android:textSize="14dp" />
 
             <View
                 android:layout_width="fill_parent"
@@ -209,6 +219,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_below="@+id/btn_Hotro"
+                android:fontFamily="@font/lexenddeca"
                 android:layout_marginTop="5dp"
                 android:background="@color/white"
                 android:drawableLeft="@drawable/dangxuat"
@@ -216,7 +227,7 @@
                 android:padding="16dp"
                 android:text="   Đăng xuất"
                 android:textColor="@color/black"
-                android:textSize="15dp" />
+                android:textSize="14dp" />
 <!--        </ScrollView>-->
 
     </RelativeLayout>

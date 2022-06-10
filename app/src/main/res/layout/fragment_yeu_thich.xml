@@ -15,13 +15,18 @@
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
                 android:background="@color/mau_xanh">
+
                 <TextView
+                    android:id="@+id/tv_Yeuthich"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="     Yêu thích"
-                    android:layout_marginTop="50dp"
-                    android:textSize="20dp"
-                    android:textColor="@color/white"/>
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="20dp"
+                    android:fontFamily="@font/lexenddeca"
+                    android:text="Yêu thích"
+                    android:textColor="@color/white"
+                    android:textSize="26dp"
+                    android:textStyle="bold" />
             </RelativeLayout>
 
             <LinearLayout
@@ -46,6 +51,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="10dp"
+                        android:fontFamily="@font/lexenddeca"
                         android:layout_marginTop="20dp"
                         android:text="Galaxy Z Flip 3"
                         android:textColor="@color/black"
@@ -56,6 +62,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="10dp"
                         android:layout_marginTop="10dp"
+                        android:fontFamily="@font/lexenddeca"
                         android:text="Sản phẩm bán chạy"
                         android:textSize="12dp" />
 
@@ -64,6 +71,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="10dp"
                         android:layout_marginTop="10dp"
+                        android:fontFamily="@font/lexenddeca"
                         android:drawableLeft="@drawable/sao" />
 
                     <LinearLayout
@@ -82,6 +90,7 @@
                         <TextView
                             android:layout_width="50dp"
                             android:layout_height="45dp"
+                            android:fontFamily="@font/lexenddeca"
                             android:text="1"
                             android:textSize="20dp"
                             android:gravity="center"
@@ -108,9 +117,10 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="20dp"
                         android:layout_marginTop="20dp"
+                        android:fontFamily="@font/lexenddeca"
                         android:text="25000000đ"
                         android:textColor="#FF0000"
-                        android:textSize="20dp" />
+                        android:textSize="16dp" />
 
                     <Button
                         android:id="@+id/btn_ytThem1"
@@ -119,6 +129,7 @@
                         android:layout_marginLeft="40dp"
                         android:layout_marginTop="30dp"
                         android:background="#FF9933"
+                        android:fontFamily="@font/lexenddeca"
                         android:text="thêm"
                         android:textColor="@color/white" />
                 </LinearLayout>
@@ -154,6 +165,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="10dp"
+                        android:fontFamily="@font/lexenddeca"
                         android:layout_marginTop="20dp"
                         android:text="Galaxy Z Flip 3"
                         android:textColor="@color/black"
@@ -162,6 +174,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:fontFamily="@font/lexenddeca"
                         android:layout_marginLeft="10dp"
                         android:layout_marginTop="10dp"
                         android:text="Sản phẩm bán chạy"
@@ -171,6 +184,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="10dp"
+                        android:fontFamily="@font/lexenddeca"
                         android:layout_marginTop="10dp"
                         android:drawableLeft="@drawable/sao" />
 
@@ -191,6 +205,7 @@
                             android:layout_width="50dp"
                             android:layout_height="45dp"
                             android:text="1"
+                            android:fontFamily="@font/lexenddeca"
                             android:textSize="20dp"
                             android:gravity="center"
                             android:textColor="@color/black"
@@ -217,8 +232,9 @@
                         android:layout_marginLeft="20dp"
                         android:layout_marginTop="20dp"
                         android:text="25000000đ"
+                        android:fontFamily="@font/lexenddeca"
                         android:textColor="#FF0000"
-                        android:textSize="20dp" />
+                        android:textSize="16dp" />
 
                     <Button
                         android:id="@+id/btn_ytThem2"
@@ -226,6 +242,7 @@
                         android:layout_height="27dp"
                         android:layout_marginLeft="40dp"
                         android:layout_marginTop="30dp"
+                        android:fontFamily="@font/lexenddeca"
                         android:background="#FF9933"
                         android:text="thêm"
                         android:textColor="@color/white" />
@@ -250,7 +267,8 @@
                     android:layout_height="95dp"
                     android:layout_marginLeft="10dp"
                     android:layout_marginTop="10dp"
-                    android:src="@drawable/iphone13" />
+                    android:src="@drawable/iphone13"
+                    android:fontFamily="@font/lexenddeca"/>
 
                 <LinearLayout
                     android:layout_width="wrap_content"
@@ -264,11 +282,13 @@
                         android:layout_marginTop="20dp"
                         android:text="Galaxy Z Flip 3"
                         android:textColor="@color/black"
+                        android:fontFamily="@font/lexenddeca"
                         android:textSize="20dp" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:fontFamily="@font/lexenddeca"
                         android:layout_marginLeft="10dp"
                         android:layout_marginTop="10dp"
                         android:text="Sản phẩm bán chạy"
@@ -278,6 +298,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="10dp"
+                        android:fontFamily="@font/lexenddeca"
                         android:layout_marginTop="10dp"
                         android:drawableLeft="@drawable/sao" />
 
@@ -299,6 +320,7 @@
                             android:layout_height="45dp"
                             android:text="1"
                             android:textSize="20dp"
+                            android:fontFamily="@font/lexenddeca"
                             android:gravity="center"
                             android:textColor="@color/black"
                             android:textStyle="bold" />
@@ -321,17 +343,19 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:fontFamily="@font/lexenddeca"
                         android:layout_marginLeft="20dp"
                         android:layout_marginTop="20dp"
                         android:text="25000000đ"
                         android:textColor="#FF0000"
-                        android:textSize="20dp" />
+                        android:textSize="16dp" />
 
                     <Button
                         android:id="@+id/btn_ytThem3"
                         android:layout_width="68dp"
                         android:layout_height="27dp"
                         android:layout_marginLeft="40dp"
+                        android:fontFamily="@font/lexenddeca"
                         android:layout_marginTop="30dp"
                         android:background="#FF9933"
                         android:text="thêm"
