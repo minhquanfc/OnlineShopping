@@ -1,14 +1,111 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Fragments.GioHangFragment">
 
-    <!-- TODO: Update blank fragment layout -->
+
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <RelativeLayout
+        android:id="@+id/bgr"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="@color/mau_xanh">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="     Giỏ hàng"
+            android:layout_marginTop="50dp"
+            android:textSize="20dp"
+            android:textColor="@color/white"/>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="1">
+
+        <TextView
+            android:layout_marginTop="100dp"
+            android:id="@+id/tv_diachi"
+            android:layout_width="274dp"
+            android:layout_height="55dp"
+            android:layout_weight="0.2"
+            android:width="200dp"
+            android:background="@color/white"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            android:gravity="center_vertical"
+            android:paddingLeft="?android:attr/expandableListPreferredChildPaddingLeft" />
+
+        <Button
+            android:layout_marginTop="100dp"
+            android:id="@+id/btn_Thaydoi"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_weight="0.8"
+            android:background="@color/white"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            android:text="Thay đổi địa chỉ"
+            android:textColor="#0000FF"
+            android:textSize="12dp" />
+    </LinearLayout>
+
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Gio hang" />
+        android:layout_marginTop="160dp"
+        android:height="32dp"
+        android:text="   Giỏ hàng"
+        android:background="#CCCCCC"
+        android:textSize="18dp"
+        />
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rcview_dienthoai"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="200dp">
+    </androidx.recyclerview.widget.RecyclerView>
 
-</FrameLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="1">
+
+        <TextView
+            android:id="@+id/tv_Tongtien"
+            android:layout_width="274dp"
+            android:layout_height="55dp"
+            android:layout_marginTop="670dp"
+            android:layout_weight="0.2"
+            android:width="200dp"
+            android:text="Tổng tiền:"
+            android:background="@color/white"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            android:gravity="center_vertical"
+            android:paddingLeft="?android:attr/expandableListPreferredChildPaddingLeft" />
+
+        <Button
+            android:id="@+id/btn_Thanhtoan"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_marginTop="670dp"
+            android:layout_weight="0.8"
+            android:background="@color/mau_xanh"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            android:text="Thanh toán"
+            android:textColor="#ffffff"
+            android:textSize="18dp" />
+    </LinearLayout>
+</RelativeLayout>
+</androidx.core.widget.NestedScrollView >
