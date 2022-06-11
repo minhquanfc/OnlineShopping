@@ -3,15 +3,13 @@ package com.poly.onlineshopping.model;
 public class DanhMuc {
     public String ten;
     public String anh;
-    public String loai;
 
     public DanhMuc() {
     }
 
-    public DanhMuc(String ten, String anh, String loai) {
+    public DanhMuc(String ten, String anh) {
         this.ten = ten;
         this.anh = anh;
-        this.loai = loai;
     }
 
     public String getTen() {
@@ -28,13 +26,5 @@ public class DanhMuc {
 
     public void setAnh(String anh) {
         this.anh = anh;
-    }
-
-    public String getLoai() {
-        return loai;
-    }
-
-    public void setLoai(String loai) {
-        this.loai = loai;
     }
 }

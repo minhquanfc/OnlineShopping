@@ -1,6 +1,5 @@
 package com.poly.onlineshopping.model;
 
-import com.denzcoskun.imageslider.constants.ScaleTypes;
 
 import java.util.List;
 
