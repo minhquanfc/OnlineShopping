@@ -4,11 +4,11 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -39,12 +39,32 @@ public class TaiKhoanFragment extends Fragment {
         tv_yeuthich.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                Intent intent = new Intent(getActivity(), YeuThichFragment.class);
+//                Intent intent = new Intent(getActivity(), YeuThichFragment);
+//                startActivity(intent);
+            }
+
+
+        });
+        tv_giohang.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+//                Intent intent = new Intent(getActivity(), GioHangFragment.class);
+//                startActivity(intent);
+
+
+//                Fragment GioHang = new GioHangFragment();
+//                FragmentTransaction fm = getActivity().getSupportFragmentManager().beginTransaction();
+//                fm.replace(R.id.frgGiohang, GioHang).commit();
+            }
+        });
+        tv_hotro.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+//                Intent intent = new Intent(getActivity(), HoTroActivity.class);
 //                startActivity(intent);
             }
         });
         return view;
-
 
     }
 

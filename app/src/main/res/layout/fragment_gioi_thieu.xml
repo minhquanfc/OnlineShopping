@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".chucnangmanghinhtaikhoan.GioiThieuFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:id="@+id/bgr"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:background="@color/mau_xanh">
+
+            <ImageView
+                android:id="@+id/img_quaylaiHT"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:src="@drawable/back" />
+
+            <TextView
+                android:id="@+id/tv_giohang"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="50dp"
+                android:fontFamily="@font/lexenddeca"
+                android:text="Giới thiệu bạn bè"
+                android:textColor="@color/white"
+                android:textSize="26dp"
+                android:textStyle="bold" />
+        </RelativeLayout>
+    </RelativeLayout>
+        <ImageView
+            android:layout_width="410dp"
+            android:layout_height="258dp"
+            android:src="@drawable/banbe" />
+
+        <TextView
+            android:layout_marginTop="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hãy chia sẻ mã đến 5 người bạn để nhận được những phần quà giá trị có thể nên đến 500 nghìn đồng."
+            android:textSize="14dp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/lexenddeca"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Mã QR của bạn:"/>
+    </LinearLayout>
+</FrameLayout>
