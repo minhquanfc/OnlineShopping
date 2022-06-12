@@ -5,7 +5,6 @@
       <map>
         <entry key="..\:/Androidproject/OnlineShopping/app/src/main/res/drawable-v24/bg_button.xml" value="0.104" />
         <entry key="..\:/Androidproject/OnlineShopping/app/src/main/res/drawable/bg_button.xml" value="0.104" />
-        <entry key="..\:/Androidproject/OnlineShopping/app/src/main/res/drawable/bg_progressbar.xml" value="0.1085" />
         <entry key="..\:/Androidproject/OnlineShopping/app/src/main/res/layout/activity_login.xml" value="0.14130434782608695" />
         <entry key="..\:/Androidproject/OnlineShopping/app/src/main/res/layout/activity_main.xml" value="0.14130434782608695" />
         <entry key="..\:/Androidproject/OnlineShopping/app/src/main/res/layout/activity_man_hinh_chao.xml" value="0.14130434782608695" />
@@ -23,6 +22,28 @@
         <entry key="..\:/Androidproject/OnlineShopping/app/src/main/res/layout/item_danhmuc.xml" value="0.4466666666666667" />
         <entry key="..\:/Androidproject/OnlineShopping/app/src/main/res/layout/item_sanpham.xml" value="0.22" />
         <entry key="..\:/Androidproject/OnlineShopping/app/src/main/res/menu/bottom_nav.xml" value="0.17552083333333332" />
+        <entry key="..\:/Users/ACER/Documents/GitHub/OnlineShopping/app/src/main/res/drawable/bg_button.xml" value="0.2095" />
+        <entry key="..\:/Users/ACER/Documents/GitHub/OnlineShopping/app/src/main/res/drawable/bg_cricle_red.xml" value="0.2095" />
+        <entry key="..\:/Users/ACER/Documents/GitHub/OnlineShopping/app/src/main/res/drawable/bg_edittext.xml" value="0.2095" />
+        <entry key="..\:/Users/ACER/Documents/GitHub/OnlineShopping/app/src/main/res/drawable/bg_indicator.xml" value="0.2095" />
+        <entry key="..\:/Users/ACER/Documents/GitHub/OnlineShopping/app/src/main/res/drawable/bg_progressbar.xml" value="0.2095" />
+        <entry key="..\:/Users/ACER/Documents/GitHub/OnlineShopping/app/src/main/res/drawable/ic_launcher_background.xml" value="0.207" />
+        <entry key="..\:/Users/ACER/Documents/GitHub/OnlineShopping/app/src/main/res/drawable/push_button_background.xml" value="0.2095" />
+        <entry key="..\:/Users/ACER/Documents/GitHub/OnlineShopping/app/src/main/res/layout/activity_home.xml" value="0.264" />
+        <entry key="..\:/Users/ACER/Documents/GitHub/OnlineShopping/app/src/main/res/layout/activity_login.xml" value="0.25" />
+        <entry key="..\:/Users/ACER/Documents/GitHub/OnlineShopping/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/ACER/Documents/GitHub/OnlineShopping/app/src/main/res/layout/activity_man_hinh_chao.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/ACER/Documents/GitHub/OnlineShopping/app/src/main/res/layout/activity_on_boarding.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/ACER/Documents/GitHub/OnlineShopping/app/src/main/res/layout/activity_on_boarding2.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/ACER/Documents/GitHub/OnlineShopping/app/src/main/res/layout/activity_sign.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/ACER/Documents/GitHub/OnlineShopping/app/src/main/res/layout/fragment_gio_hang.xml" value="0.264" />
+        <entry key="..\:/Users/ACER/Documents/GitHub/OnlineShopping/app/src/main/res/layout/fragment_home.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/ACER/Documents/GitHub/OnlineShopping/app/src/main/res/layout/fragment_on_boarding.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/ACER/Documents/GitHub/OnlineShopping/app/src/main/res/layout/fragment_tai_khoan.xml" value="0.264" />
+        <entry key="..\:/Users/ACER/Documents/GitHub/OnlineShopping/app/src/main/res/layout/fragment_yeu_thich.xml" value="0.264" />
+        <entry key="..\:/Users/ACER/Documents/GitHub/OnlineShopping/app/src/main/res/layout/item_sanpham.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/ACER/Documents/GitHub/OnlineShopping/app/src/main/res/menu/bottom_nav.xml" value="0.1953125" />
+        <entry key="..\:/Users/ACER/Documents/GitHub/OnlineShopping/app/src/main/res/menu/seach.xml" value="0.2" />
       </map>
     </option>
   </component>
