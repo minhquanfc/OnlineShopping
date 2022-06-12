@@ -1,6 +1,8 @@
 package com.poly.onlineshopping.model;
 
-public class SanPham {
+import java.io.Serializable;
+
+public class SanPham implements Serializable {
     public String id;
     public String tensanpham;
     public int giasanpham;
@@ -18,6 +20,13 @@ public class SanPham {
         this.mota = mota;
         this.anhsanpham = anhsanpham;
         this.loai = loai;
+    }
+
+    public SanPham(String id, String tensanpham, int giasanpham, String anhsanpham) {
+        this.id = id;
+        this.tensanpham = tensanpham;
+        this.giasanpham = giasanpham;
+        this.anhsanpham = anhsanpham;
     }
 
     public String getId() {

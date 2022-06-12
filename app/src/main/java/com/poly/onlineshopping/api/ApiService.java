@@ -27,4 +27,7 @@ public interface ApiService {
     Call<List<DanhMuc>> getDanhmuc();
     @GET("getbanner")
     Call<List<Banner>> getBanner();
+
+    @POST("giohang/themgiohang")
+    Call<SanPham> postAddCart(@Body SanPham sanPham);
 }
