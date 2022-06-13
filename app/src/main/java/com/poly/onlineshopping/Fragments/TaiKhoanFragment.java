@@ -15,6 +15,8 @@ import android.widget.Toast;
 
 import com.poly.onlineshopping.R;
 import com.poly.onlineshopping.activity.LoginActivity;
+import com.poly.onlineshopping.chucnangmanghinhtaikhoan.GioiThieuFragment;
+import com.poly.onlineshopping.chucnangmanghinhtaikhoan.HoTroFragment;
 
 
 public class TaiKhoanFragment extends Fragment {
@@ -51,10 +53,6 @@ public class TaiKhoanFragment extends Fragment {
         tv_giohang.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                Intent intent = new Intent(getActivity(), GioHangFragment.class);
-//                startActivity(intent);
-
-
                 Fragment GioHang = new GioHangFragment();
                 FragmentTransaction fm = getActivity().getSupportFragmentManager().beginTransaction();
                 fm.replace(R.id.frame_layout, GioHang).commit();
@@ -63,8 +61,17 @@ public class TaiKhoanFragment extends Fragment {
         tv_hotro.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                Intent intent = new Intent(getActivity(), HoTroActivity.class);
-//                startActivity(intent);
+                Fragment HoTro = new HoTroFragment();
+                FragmentTransaction fm = getActivity().getSupportFragmentManager().beginTransaction();
+                fm.replace(R.id.frame_layout, HoTro).commit();
+            }
+        });
+        tv_gioithieu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                GioiThieuFragment Gioithieu = new GioiThieuFragment();
+                FragmentTransaction fm = getActivity().getSupportFragmentManager().beginTransaction();
+                fm.replace(R.id.frame_layout, Gioithieu).commit();
             }
         });
         return view;

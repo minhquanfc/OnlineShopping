@@ -31,24 +31,26 @@
         <entry key="..\:/Users/ACER/Documents/GitHub/OnlineShopping/app/src/main/res/layout/activity_chi_tiet.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/ACER/Documents/GitHub/OnlineShopping/app/src/main/res/layout/activity_ho_tro.xml" value="0.2" />
         <entry key="..\:/Users/ACER/Documents/GitHub/OnlineShopping/app/src/main/res/layout/activity_home.xml" value="0.264" />
-        <entry key="..\:/Users/ACER/Documents/GitHub/OnlineShopping/app/src/main/res/layout/activity_login.xml" value="0.25" />
+        <entry key="..\:/Users/ACER/Documents/GitHub/OnlineShopping/app/src/main/res/layout/activity_login.xml" value="0.264" />
         <entry key="..\:/Users/ACER/Documents/GitHub/OnlineShopping/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/ACER/Documents/GitHub/OnlineShopping/app/src/main/res/layout/activity_man_hinh_chao.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/ACER/Documents/GitHub/OnlineShopping/app/src/main/res/layout/activity_on_boarding.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/ACER/Documents/GitHub/OnlineShopping/app/src/main/res/layout/activity_on_boarding2.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/ACER/Documents/GitHub/OnlineShopping/app/src/main/res/layout/activity_sign.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/ACER/Documents/GitHub/OnlineShopping/app/src/main/res/layout/fragment_danh_gia.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/ACER/Documents/GitHub/OnlineShopping/app/src/main/res/layout/fragment_gio_hang.xml" value="0.264" />
-        <entry key="..\:/Users/ACER/Documents/GitHub/OnlineShopping/app/src/main/res/layout/fragment_gioi_thieu.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/ACER/Documents/GitHub/OnlineShopping/app/src/main/res/layout/fragment_gioi_thieu.xml" value="0.15328467153284672" />
         <entry key="..\:/Users/ACER/Documents/GitHub/OnlineShopping/app/src/main/res/layout/fragment_ho_tro.xml" value="0.24048913043478262" />
         <entry key="..\:/Users/ACER/Documents/GitHub/OnlineShopping/app/src/main/res/layout/fragment_home.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/ACER/Documents/GitHub/OnlineShopping/app/src/main/res/layout/fragment_on_board2.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/ACER/Documents/GitHub/OnlineShopping/app/src/main/res/layout/fragment_on_boarding.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/ACER/Documents/GitHub/OnlineShopping/app/src/main/res/layout/fragment_on_boarding3.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/ACER/Documents/GitHub/OnlineShopping/app/src/main/res/layout/fragment_tai_khoan.xml" value="0.264" />
+        <entry key="..\:/Users/ACER/Documents/GitHub/OnlineShopping/app/src/main/res/layout/fragment_tai_khoan.xml" value="0.25" />
         <entry key="..\:/Users/ACER/Documents/GitHub/OnlineShopping/app/src/main/res/layout/fragment_tai_khoan2.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/ACER/Documents/GitHub/OnlineShopping/app/src/main/res/layout/fragment_yeu_thich.xml" value="0.264" />
+        <entry key="..\:/Users/ACER/Documents/GitHub/OnlineShopping/app/src/main/res/layout/fragment_yeu_thich.xml" value="0.1" />
         <entry key="..\:/Users/ACER/Documents/GitHub/OnlineShopping/app/src/main/res/layout/item_banner.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/ACER/Documents/GitHub/OnlineShopping/app/src/main/res/layout/item_danhmuc.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/ACER/Documents/GitHub/OnlineShopping/app/src/main/res/layout/item_gioithieu.xml" value="0.1" />
         <entry key="..\:/Users/ACER/Documents/GitHub/OnlineShopping/app/src/main/res/layout/item_sanpham.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/ACER/Documents/GitHub/OnlineShopping/app/src/main/res/layout/item_yeuthich.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/ACER/Documents/GitHub/OnlineShopping/app/src/main/res/menu/bottom_nav.xml" value="0.1953125" />

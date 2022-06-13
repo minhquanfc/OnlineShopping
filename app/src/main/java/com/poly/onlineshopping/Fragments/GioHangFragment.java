@@ -13,20 +13,29 @@ import android.widget.TextView;
 
 import com.poly.onlineshopping.R;
 
+import java.util.ArrayList;
+
 public class GioHangFragment extends Fragment {
     TextView tv1,tv2;
     Button btn1,btn2;
     RecyclerView recyclerView;
+    View view;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_gio_hang, container, false);
+        Anhxa();
+
+        return view;
+    }
+
+    private void Anhxa() {
         tv1 = view.findViewById(R.id.tv_diachi);
         tv2 = view.findViewById(R.id.tv_Tongtien);
         btn1 = view.findViewById(R.id.btn_Thaydoi);
         btn2 = view.findViewById(R.id.btn_Thanhtoan);
         recyclerView = view.findViewById(R.id.rcview_GioHang);
-        return view;    }
+    }
 }

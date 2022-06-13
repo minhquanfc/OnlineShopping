@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".chucnangmanghinhtaikhoan.GioiThieuFragment">
 
     <LinearLayout
@@ -34,28 +35,38 @@
                 android:layout_centerVertical="true"
                 android:layout_marginLeft="50dp"
                 android:fontFamily="@font/lexenddeca"
-                android:text="Giới thiệu bạn bè"
+                android:text="Giới thiệu"
                 android:textColor="@color/white"
                 android:textSize="26dp"
                 android:textStyle="bold" />
         </RelativeLayout>
     </RelativeLayout>
-        <ImageView
-            android:layout_width="410dp"
-            android:layout_height="258dp"
-            android:src="@drawable/banbe" />
-
         <TextView
             android:layout_marginTop="10dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Hãy chia sẻ mã đến 5 người bạn để nhận được những phần quà giá trị có thể nên đến 500 nghìn đồng."
-            android:textSize="14dp"
+            android:text="Xem trước"
+            android:textSize="24dp"
             android:textColor="@color/black"
-            android:fontFamily="@font/lexenddeca"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Mã QR của bạn:"/>
+            android:fontFamily="@font/lexenddeca"
+            android:textStyle="bold"/>
+<!--        <com.smarteist.autoimageslider.SliderView-->
+<!--            android:layout_marginTop="20dp"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="400dp"-->
+<!--            android:id="@+id/img_slider"-->
+<!--            app:sliderAnimationDuration="600"-->
+<!--            app:sliderAutoCycleDirection="back_and_forth"-->
+<!--            app:sliderAutoCycleEnabled="true"-->
+<!--            app:sliderIndicatorAnimationDuration="600"-->
+<!--            app:sliderIndicatorGravity="center_horizontal|bottom"-->
+<!--            app:sliderIndicatorMargin="15dp"-->
+<!--            app:sliderIndicatorOrientation="horizontal"-->
+<!--            app:sliderIndicatorPadding="3dp"-->
+<!--            app:sliderIndicatorRadius="2dp"-->
+<!--            app:sliderIndicatorSelectedColor="#5A5A5A"-->
+<!--            app:sliderIndicatorUnselectedColor="#FFF"-->
+<!--            app:sliderScrollTimeInSec="2"-->
+<!--            app:sliderStartAutoCycle="true"/>-->
     </LinearLayout>
 </FrameLayout>
