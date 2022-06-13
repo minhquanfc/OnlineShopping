@@ -26,16 +26,14 @@ public class GioHangFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_gio_hang, container, false);
-        Anhxa();
 
-        return view;
-    }
-
-    private void Anhxa() {
-        tv1 = view.findViewById(R.id.tv_diachi);
+        tv1 = view.findViewById(R.id.tv_diachi1);
         tv2 = view.findViewById(R.id.tv_Tongtien);
         btn1 = view.findViewById(R.id.btn_Thaydoi);
         btn2 = view.findViewById(R.id.btn_Thanhtoan);
         recyclerView = view.findViewById(R.id.rcview_GioHang);
+
+        return view;
     }
+
 }

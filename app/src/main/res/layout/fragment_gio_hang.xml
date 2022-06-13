@@ -36,7 +36,7 @@
         android:weightSum="1">
 
         <TextView
-            android:id="@+id/tv_diachi"
+            android:id="@+id/tv_diachi1"
             android:layout_marginTop="100dp"
             android:layout_width="274dp"
             android:layout_height="55dp"
@@ -49,6 +49,7 @@
             android:focusableInTouchMode="false"
             android:gravity="center_vertical"
             android:paddingLeft="?android:attr/expandableListPreferredChildPaddingLeft" />
+
 
         <Button
             android:layout_marginTop="100dp"
