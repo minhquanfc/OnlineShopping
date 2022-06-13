@@ -37,10 +37,13 @@ public class TaiKhoanFragment extends Fragment {
         });
 
         tv_yeuthich.setOnClickListener(new View.OnClickListener() {
+
+
             @Override
             public void onClick(View v) {
-//                Intent intent = new Intent(getActivity(), YeuThichFragment);
-//                startActivity(intent);
+                YeuThichFragment Yeuthich = new YeuThichFragment();
+                FragmentTransaction fm = getActivity().getSupportFragmentManager().beginTransaction();
+                fm.replace(R.id.frame_layout, Yeuthich).commit();
             }
 
 
@@ -52,9 +55,9 @@ public class TaiKhoanFragment extends Fragment {
 //                startActivity(intent);
 
 
-//                Fragment GioHang = new GioHangFragment();
-//                FragmentTransaction fm = getActivity().getSupportFragmentManager().beginTransaction();
-//                fm.replace(R.id.frgGiohang, GioHang).commit();
+                Fragment GioHang = new GioHangFragment();
+                FragmentTransaction fm = getActivity().getSupportFragmentManager().beginTransaction();
+                fm.replace(R.id.frame_layout, GioHang).commit();
             }
         });
         tv_hotro.setOnClickListener(new View.OnClickListener() {

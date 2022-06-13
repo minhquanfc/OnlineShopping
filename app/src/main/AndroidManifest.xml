@@ -12,9 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.OnlineShopping"
         android:usesCleartextTraffic="true">
-        <activity
-            android:name=".HoTroActivity"
-            android:exported="false" />
+<!--        <activity-->
+<!--            android:name=".HoTroActivity"-->
+<!--            android:exported="false" />-->
         <activity
             android:name=".activity.ChiTietActivity"
             android:exported="false" />
