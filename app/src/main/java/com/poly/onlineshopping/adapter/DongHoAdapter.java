@@ -1,6 +1,7 @@
 package com.poly.onlineshopping.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.poly.onlineshopping.R;
+import com.poly.onlineshopping.activity.ChiTietActivity;
 import com.poly.onlineshopping.model.DongHo;
 import com.poly.onlineshopping.model.SanPham;
 
@@ -41,6 +43,14 @@ public class DongHoAdapter extends RecyclerView.Adapter<DongHoHolder> {
         //ten 1 dong
         holder.tv_ten_sanpham.setMaxLines(1);
         holder.tv_ten_sanpham.setEllipsize(TextUtils.TruncateAt.END);
+        holder.click.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context, ChiTietActivity.class);
+                intent.putExtra("chitiet",sanPhamList.get(position));
+                context.startActivity(intent);
+            }
+        });
     }
 
     @Override

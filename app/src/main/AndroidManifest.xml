@@ -12,9 +12,24 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.OnlineShopping"
         android:usesCleartextTraffic="true">
-<!--        <activity-->
-<!--            android:name=".HoTroActivity"-->
-<!--            android:exported="false" />-->
+        <activity
+            android:name=".activity.ProfileActivity"
+            android:exported="true" >
+<!--            <intent-filter>-->
+<!--                <action android:name="android.intent.action.MAIN" />-->
+
+<!--                <category android:name="android.intent.category.LAUNCHER" />-->
+<!--            </intent-filter>-->
+        </activity>
+        <activity
+            android:name=".activity.InfoDonHangActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.DonHangActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.DanhSachActivity"
+            android:exported="false" />
         <activity
             android:name=".activity.ChiTietActivity"
             android:exported="false" />
@@ -25,12 +40,12 @@
             android:name=".activity.LoginActivity"
             android:exported="true">
 
-            <!-- <intent-filter> -->
-            <!-- <action android:name="android.intent.action.MAIN" /> -->
+<!--             <intent-filter>-->
+<!--             <action android:name="android.intent.action.MAIN" />-->
 
 
-            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
-            <!-- </intent-filter> -->
+<!--             <category android:name="android.intent.category.LAUNCHER" />-->
+<!--             </intent-filter>-->
         </activity>
         <activity
             android:name=".manhinhgioithieu.OnBoardingActivity"
@@ -39,13 +54,18 @@
             android:name=".manhinhgioithieu.ManHinhChao"
             android:exported="true">
 
+<!--             <intent-filter>-->
+<!--             <action android:name="android.intent.action.MAIN" />-->
+
+
+<!--             <category android:name="android.intent.category.LAUNCHER" />-->
+<!--             </intent-filter>-->
         </activity>
         <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>

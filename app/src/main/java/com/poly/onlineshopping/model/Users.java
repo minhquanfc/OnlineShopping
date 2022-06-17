@@ -1,6 +1,7 @@
 package com.poly.onlineshopping.model;
 
 public class Users {
+    public String _id;
     public String ten;
     public String email;
     public String password;
@@ -11,7 +12,8 @@ public class Users {
     public Users() {
     }
 
-    public Users(String ten, String email, String password, String sodienthoai, String diachi, String token) {
+    public Users(String _id, String ten, String email, String password, String sodienthoai, String diachi, String token) {
+        this._id = _id;
         this.ten = ten;
         this.email = email;
         this.password = password;
@@ -20,18 +22,36 @@ public class Users {
         this.token = token;
     }
 
+    public Users(String _id ,String ten, String email, String password, String sodienthoai, String diachi) {
+        this._id = _id;
+        this.ten = ten;
+        this.email = email;
+        this.password = password;
+        this.sodienthoai = sodienthoai;
+        this.diachi = diachi;
+    }
     public Users(String email, String password, String token) {
         this.email = email;
         this.password = password;
         this.token = token;
     }
 
-    public Users(String ten, String email, String password, String sodienthoai, String diachi) {
+    public Users(String ten, String email, String sodienthoai, String diachi) {
         this.ten = ten;
         this.email = email;
-        this.password = password;
         this.sodienthoai = sodienthoai;
         this.diachi = diachi;
+    }
+
+    public Users(String id, String name, String email, String sdt, String diachi) {
+    }
+
+    public String get_id() {
+        return _id;
+    }
+
+    public void set_id(String _id) {
+        this._id = _id;
     }
 
     public String getTen() {

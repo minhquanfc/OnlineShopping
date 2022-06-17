@@ -1,6 +1,8 @@
 package com.poly.onlineshopping.model;
 
-public class DongHo {
+import java.io.Serializable;
+
+public class DongHo implements Serializable {
     public String id;
     public String tensanpham;
     public int giasanpham;

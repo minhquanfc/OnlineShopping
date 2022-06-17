@@ -3,8 +3,6 @@ package com.poly.onlineshopping.adapter;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
-import android.text.TextUtils;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,33 +17,28 @@ import com.poly.onlineshopping.model.SanPham;
 
 import java.util.List;
 
-public class SanPhamAdapter extends RecyclerView.Adapter<SanPhamHolder> {
+public class DanhSachAdapter extends RecyclerView.Adapter<DanhSachHolder> {
     Context context;
     List<SanPham> sanPhamList;
 
-    public SanPhamAdapter(Context context, List<SanPham> sanPhamList) {
+    public DanhSachAdapter(Context context, List<SanPham> sanPhamList) {
         this.context = context;
         this.sanPhamList = sanPhamList;
     }
 
     @NonNull
     @Override
-    public SanPhamHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(context).inflate(R.layout.item_sanpham,parent,false);
-        return new SanPhamHolder(view);
+    public DanhSachHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View view = LayoutInflater.from(context).inflate(R.layout.item_list_sanpham,parent,false);
+        return new DanhSachHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull SanPhamHolder holder, @SuppressLint("RecyclerView") int position) {
+    public void onBindViewHolder(@NonNull DanhSachHolder holder, @SuppressLint("RecyclerView") int position) {
         SanPham sanPham = sanPhamList.get(position);
-        holder.tv_ten_sanpham.setText(sanPham.getTensanpham());
-        holder.tv_gia_sanpham.setText(String.valueOf(sanPham.getGiasanpham()));
-        Glide.with(holder.img_sanpham).load(sanPham.getAnhsanpham()).into(holder.img_sanpham);
-        holder.tv_id.setText(sanPham.getId());
-
-        //ten 1 dong
-        holder.tv_ten_sanpham.setMaxLines(1);
-        holder.tv_ten_sanpham.setEllipsize(TextUtils.TruncateAt.END);
+        holder.tv_giasp.setText(String.valueOf(sanPham.getGiasanpham()));
+        Glide.with(holder.img_sp.getContext()).load(sanPham.getAnhsanpham()).into(holder.img_sp);
+        holder.tv_tensp.setText(sanPham.getTensanpham());
         holder.click.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

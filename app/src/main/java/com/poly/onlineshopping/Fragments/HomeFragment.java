@@ -1,5 +1,6 @@
 package com.poly.onlineshopping.Fragments;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.ColorSpace;
 import android.os.Bundle;
@@ -11,15 +12,20 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.AutoCompleteTextView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 
 import com.poly.onlineshopping.R;
+import com.poly.onlineshopping.activity.ChiTietActivity;
+import com.poly.onlineshopping.activity.DanhSachActivity;
 import com.poly.onlineshopping.adapter.BannerAdapter;
 import com.poly.onlineshopping.adapter.DanhMucAdapter;
 import com.poly.onlineshopping.adapter.DongHoAdapter;
 import com.poly.onlineshopping.adapter.SanPhamAdapter;
+import com.poly.onlineshopping.adapter.SanPhamSearchAdapter;
 import com.poly.onlineshopping.api.ApiService;
 import com.poly.onlineshopping.model.Banner;
 import com.poly.onlineshopping.model.DanhMuc;
@@ -44,6 +50,7 @@ public class HomeFragment extends Fragment {
     SliderView img_slide;
     AutoCompleteTextView ed_search;
     RecyclerView rcview_dienthoai, rcview_danhmuc, rcview_dongho;
+    TextView tv_xemthem_dienthoai,tv_xemthem_dongho;
 
     List<DanhMuc> danhMucList;
     List<SanPham> sanPhamList;
@@ -61,6 +68,8 @@ public class HomeFragment extends Fragment {
         rcview_dienthoai = view.findViewById(R.id.rcview_dienthoai);
         rcview_danhmuc = view.findViewById(R.id.rcview_danhmuc);
         rcview_dongho = view.findViewById(R.id.rcview_dongho);
+        tv_xemthem_dienthoai = view.findViewById(R.id.tv_xemthem_dienthoai);
+        tv_xemthem_dongho = view.findViewById(R.id.tv_xemthem_dongho);
 
         danhMucList = new ArrayList<>();
         sanPhamList = new ArrayList<>();
@@ -76,6 +85,23 @@ public class HomeFragment extends Fragment {
         //get dong ho
         getDongho();
 
+        tv_xemthem_dienthoai.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getContext(), DanhSachActivity.class);
+                intent.putExtra("type","Điện thoại");
+                startActivity(intent);
+            }
+        });
+        tv_xemthem_dongho.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getContext(), DanhSachActivity.class);
+                intent.putExtra("type","Đồng hồ");
+                startActivity(intent);
+            }
+        });
+        setSanphamSearchAdapter();
         return view;
     }
 
@@ -119,7 +145,7 @@ public class HomeFragment extends Fragment {
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
         ApiService apiService = retrofit.create(ApiService.class);
-        Call<List<SanPham>> call = apiService.getSanPham();
+        Call<List<SanPham>> call = apiService.getDienThoai();
         call.enqueue(new Callback<List<SanPham>>() {
             @Override
             public void onResponse(Call<List<SanPham>> call, Response<List<SanPham>> response) {
@@ -193,6 +219,19 @@ public class HomeFragment extends Fragment {
             @Override
             public void onFailure(Call<List<Banner>> call, Throwable t) {
 
+            }
+        });
+    }
+    private void setSanphamSearchAdapter() {
+        SanPhamSearchAdapter adapter = new SanPhamSearchAdapter(getActivity(), android.R.layout.activity_list_item,sanPhamList);
+        ed_search.setAdapter(adapter);
+        //intent qua chi tiet
+        ed_search.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent = new Intent(getContext(), ChiTietActivity.class);
+                intent.putExtra("chitiet",sanPhamList.get(position));
+                startActivity(intent);
             }
         });
     }

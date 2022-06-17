@@ -1,5 +1,6 @@
 package com.poly.onlineshopping.adapter;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
@@ -11,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.poly.onlineshopping.R;
+import com.poly.onlineshopping.activity.DanhSachActivity;
 import com.poly.onlineshopping.model.DanhMuc;
 
 import java.util.List;
@@ -32,14 +34,16 @@ public class DanhMucAdapter extends RecyclerView.Adapter<DanhMucHolder> {
     }
 
     @Override
-    public void onBindViewHolder(@NonNull DanhMucHolder holder, int position) {
+    public void onBindViewHolder(@NonNull DanhMucHolder holder, @SuppressLint("RecyclerView") int position) {
         DanhMuc danhMuc = danhMucList.get(position);
         holder.tv_ten_danhmuc.setText(danhMuc.getTen());
         Glide.with(holder.img_danhmuc).load(danhMuc.getAnh()).into(holder.img_danhmuc);
         holder.click.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent intent = new Intent(context, DanhSachActivity.class);
+                intent.putExtra("type",danhMucList.get(position).getTen());
+                context.startActivity(intent);
             }
         });
     }

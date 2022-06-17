@@ -3,7 +3,9 @@ package com.poly.onlineshopping.activity;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -50,6 +52,7 @@ public class LoginActivity extends AppCompatActivity {
         progressBar.setIndeterminateDrawable(doubleBounce);
         progressBar.setVisibility(View.GONE);
 
+
         btn_login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -91,8 +94,18 @@ public class LoginActivity extends AppCompatActivity {
                         Intent intent = new Intent(LoginActivity.this,MainActivity.class);
                         startActivity(intent);
                         progressBar.setVisibility(View.GONE);
+                        finishAffinity();
                         Toast.makeText(LoginActivity.this, "Đăng nhập thành công", Toast.LENGTH_SHORT).show();
                     }
+                    SharedPreferences sp= getSharedPreferences("Login", MODE_PRIVATE);
+                    SharedPreferences.Editor Ed= sp.edit();
+                    Ed.putString("email",userApi.getEmail() );
+                    Ed.putString("id",userApi.get_id());
+//                    Ed.putString("sodienthoai",userApi.getSodienthoai());
+//                    Ed.putString("diachi",userApi.getDiachi());
+                    Ed.putString("token",userApi.getToken());
+                    Ed.commit();
+
                 }else {
                     progressBar.setVisibility(View.GONE);
                     Toast.makeText(LoginActivity.this, "Đăng nhập không thành công", Toast.LENGTH_SHORT).show();

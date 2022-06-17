@@ -1,122 +1,159 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.core.widget.NestedScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Fragments.GioHangFragment">
-
-
-<RelativeLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:id="@+id/fragment_giohang"
+    android:background="@color/white">
     <RelativeLayout
-        android:id="@+id/bgr"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:background="@color/mau_xanh">
-
+        android:layout_height="60dp"
+        android:background="@color/mau_xanh"
+        android:id="@+id/layout1">
         <TextView
-            android:id="@+id/tv_giohang"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:layout_marginLeft="20dp"
-            android:fontFamily="@font/lexenddeca"
             android:text="Giỏ hàng"
             android:textColor="@color/white"
-            android:textSize="26dp"
-            android:textStyle="bold" />
+            android:textSize="18dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginLeft="20dp"
+            android:id="@+id/tv3"
+            android:textStyle="bold"/>
     </RelativeLayout>
 
-    <LinearLayout
+    <RelativeLayout
+        android:id="@+id/layout2"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:weightSum="1">
+        android:layout_height="80dp"
+        android:layout_below="@id/layout1">
+
+        <ImageView
+            android:id="@+id/img_icondiachia"
+            android:layout_width="8dp"
+            android:layout_height="13dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="20dp"
+            android:src="@drawable/icondiachi" />
 
         <TextView
-            android:id="@+id/tv_diachi1"
-            android:layout_marginTop="100dp"
-            android:layout_width="274dp"
-            android:layout_height="55dp"
-            android:layout_weight="0.2"
-            android:width="200dp"
-            android:background="@color/white"
-            android:focusable="false"
-            android:textSize="14dp"
+            android:id="@+id/tv_ten"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="10dp"
             android:fontFamily="@font/lexenddeca"
-            android:focusableInTouchMode="false"
-            android:gravity="center_vertical"
-            android:paddingLeft="?android:attr/expandableListPreferredChildPaddingLeft" />
+            android:text="abc"
+            android:textSize="12dp" />
 
-
-        <Button
-            android:layout_marginTop="100dp"
-            android:id="@+id/btn_Thaydoi"
-            android:layout_width="match_parent"
-            android:layout_height="55dp"
-            android:layout_weight="0.8"
+        <TextView
+            android:id="@+id/tv_diachi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_ten"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="5dp"
             android:fontFamily="@font/lexenddeca"
-            android:background="@color/white"
-            android:focusable="false"
-            android:focusableInTouchMode="false"
+            android:text="abc"
+            android:textSize="12dp" />
+
+        <TextView
+            android:id="@+id/tv_sdt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_diachi"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="5dp"
+            android:fontFamily="@font/lexenddeca"
+            android:text="099999"
+            android:textSize="12dp" />
+
+        <TextView
+            android:id="@+id/tv_thaydiachi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginRight="30dp"
+            android:fontFamily="@font/lexenddeca"
             android:text="Thay đổi địa chỉ"
-            android:textColor="#0000FF"
-            android:textSize="14dp" />
-    </LinearLayout>
+            android:textColor="@color/mau_xanh"
+            android:textSize="12dp" />
+    </RelativeLayout>
 
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="160dp"
-        android:height="32dp"
-        android:text="   Giỏ hàng"
-        android:background="#CCCCCC"
-        android:textSize="14dp"
-        />
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rcview_GioHang"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="200dp">
-    </androidx.recyclerview.widget.RecyclerView>
-
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:weightSum="1">
+        android:layout_below="@id/layout2">
 
         <TextView
-            android:id="@+id/tv_Tongtien"
-            android:layout_width="110dp"
-            android:layout_height="25dp"
-            android:layout_marginTop="600dp"
-            android:layout_weight="0.2"
+            android:id="@+id/tv6"
+            android:layout_width="match_parent"
+            android:layout_height="32dp"
+            android:background="#C1C1C1"
+            android:fontFamily="@font/lexenddeca"
+            android:padding="5dp"
+            android:paddingLeft="20dp"
+            android:text="Giỏ hàng"
+            android:textColor="@color/mau_den" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rc_view_giohang"
+            android:layout_width="match_parent"
+            android:layout_height="600dp"
+            android:layout_below="@id/tv6"
+            android:paddingBottom="30dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
             android:background="@color/white"
-            android:focusable="false"
-            android:focusableInTouchMode="false"
-            android:fontFamily="@font/lexenddeca"
-            android:gravity="left"
-            android:paddingLeft="?android:attr/expandableListPreferredChildPaddingLeft"
-            android:text="Tổng tiền: " />
+            android:orientation="horizontal">
 
-        <Button
-            android:id="@+id/btn_Thanhtoan"
-            android:layout_width="148dp"
-            android:layout_height="40dp"
-            android:layout_marginTop="600dp"
-            android:layout_weight="0.8"
-            android:background="@color/mau_xanh"
-            android:focusable="false"
-            android:focusableInTouchMode="false"
+            <TextView
+                android:id="@+id/tv4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:fontFamily="@font/lexenddeca"
+                android:text="Tổng tiền:"
+                android:textColor="@color/mau_den"
+                android:textSize="12dp"
+                android:textStyle="bold" />
 
-            android:fontFamily="@font/lexenddeca"
-            android:text="Thanh toán"
-            android:textColor="#ffffff"
-            android:textSize="14dp" />
-    </LinearLayout>
+            <TextView
+                android:id="@+id/tv_tongtien"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:fontFamily="@font/lexenddeca"
+                android:text="0"
+                android:textColor="#F44336"
+                android:textSize="12dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:fontFamily="@font/lexenddeca"
+                android:text="đ"
+                android:textColor="#F44336"
+                android:textSize="12dp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/btn_thanhtoan"
+                android:layout_width="150dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="80dp"
+                android:backgroundTint="@color/mau_xanh"
+                android:text="Thanh toán" />
+        </LinearLayout>
+    </RelativeLayout>
 </RelativeLayout>
-</androidx.core.widget.NestedScrollView >

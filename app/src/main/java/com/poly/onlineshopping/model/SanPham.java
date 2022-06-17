@@ -3,7 +3,7 @@ package com.poly.onlineshopping.model;
 import java.io.Serializable;
 
 public class SanPham implements Serializable {
-    public String id;
+    public String _id;
     public String tensanpham;
     public int giasanpham;
     public String mota;
@@ -14,7 +14,7 @@ public class SanPham implements Serializable {
     }
 
     public SanPham(String id, String tensanpham, int giasanpham, String mota, String anhsanpham, String loai) {
-        this.id = id;
+        this._id = id;
         this.tensanpham = tensanpham;
         this.giasanpham = giasanpham;
         this.mota = mota;
@@ -23,18 +23,18 @@ public class SanPham implements Serializable {
     }
 
     public SanPham(String id, String tensanpham, int giasanpham, String anhsanpham) {
-        this.id = id;
+        this._id = id;
         this.tensanpham = tensanpham;
         this.giasanpham = giasanpham;
         this.anhsanpham = anhsanpham;
     }
 
     public String getId() {
-        return id;
+        return _id;
     }
 
     public void setId(String id) {
-        this.id = id;
+        this._id = id;
     }
 
     public String getTensanpham() {

@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.poly.onlineshopping.R;
 
 public class SanPhamHolder extends RecyclerView.ViewHolder {
-    TextView tv_ten_sanpham,tv_gia_sanpham;
+    TextView tv_ten_sanpham, tv_gia_sanpham, tv_id;
     ImageView img_sanpham;
     RelativeLayout click;
     public SanPhamHolder(@NonNull View itemView) {
@@ -20,5 +20,6 @@ public class SanPhamHolder extends RecyclerView.ViewHolder {
         tv_gia_sanpham=itemView.findViewById(R.id.tv_gia_sanpham);
         img_sanpham=itemView.findViewById(R.id.img_sanpham);
         click=itemView.findViewById(R.id.click_sanpham);
+        tv_id=itemView.findViewById(R.id.tv_id);
     }
 }
