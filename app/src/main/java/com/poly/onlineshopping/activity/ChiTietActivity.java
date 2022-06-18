@@ -20,8 +20,7 @@ import com.bumptech.glide.Glide;
 import com.poly.onlineshopping.R;
 import com.poly.onlineshopping.api.ApiService;
 import com.poly.onlineshopping.model.DongHo;
-import com.poly.onlineshopping.model.GioHang;
-import com.poly.onlineshopping.model.Products;
+import com.poly.onlineshopping.model.Product;
 import com.poly.onlineshopping.model.SanPham;
 
 import java.util.ArrayList;
@@ -43,8 +42,7 @@ public class ChiTietActivity extends AppCompatActivity {
     int tonggia = 0;
     SanPham sanPham;
     DongHo dongHo;
-    GioHang gioHang;
-    Products products;
+    Product product;
     List<SanPham> sanPhamList;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,40 +64,6 @@ public class ChiTietActivity extends AppCompatActivity {
 
         getData();
 
-        btn_add_giohang.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                SharedPreferences sp1 = getApplicationContext().getSharedPreferences("Login", Context.MODE_PRIVATE);
-                String token = sp1.getString("token","");
-
-                String productId = sanPham.getId();
-                int qty = Integer.parseInt(tv_soluong_sp.getText().toString());
-                Retrofit retrofit = new Retrofit.Builder()
-                        .baseUrl("http://192.168.10.73:3000/api/")
-                        .addConverterFactory(GsonConverterFactory.create())
-                        .build();
-                ApiService apiService = retrofit.create(ApiService.class);
-                products = new Products(productId,qty);
-                gioHang = new GioHang(products);
-                Log.e("aaa","giohang: "+gioHang.getProducts().getProductId());
-                Call<GioHang> call = apiService.postAddCart(token,gioHang);
-                call.enqueue(new Callback<GioHang>() {
-                    @Override
-                    public void onResponse(Call<GioHang> call, Response<GioHang> response) {
-                        if (response.isSuccessful())
-                        {
-                            btn_add_giohang.setEnabled(false);
-                            Toast.makeText(ChiTietActivity.this, "Thêm thành công", Toast.LENGTH_SHORT).show();
-                        }
-                    }
-
-                    @Override
-                    public void onFailure(Call<GioHang> call, Throwable t) {
-
-                    }
-                });
-            }
-        });
         btn_cong_sp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -117,6 +81,12 @@ public class ChiTietActivity extends AppCompatActivity {
                     soLuong--;
                     tv_soluong_sp.setText(String.valueOf(soLuong));
                 }
+            }
+        });
+        btn_add_giohang.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                addDataGioHang();
             }
         });
     }
@@ -146,27 +116,41 @@ public class ChiTietActivity extends AppCompatActivity {
         }
     }
 
-//    private void addDataGioHang(String productId, int qty) {
-//        Retrofit retrofit = new Retrofit.Builder()
-//                .baseUrl("https://adminshop68.herokuapp.com/api/")
-//                .addConverterFactory(GsonConverterFactory.create())
-//                .build();
-//        ApiService apiService = retrofit.create(ApiService.class);
-//        items = new Products(productId,qty);
-//        gioHang = new GioHang("62a3650be6ce8b2409b306ef",items);
-//        Call<GioHang> call = apiService.postAddCart(gioHang);
-//        call.enqueue(new Callback<GioHang>() {
-//            @Override
-//            public void onResponse(Call<GioHang> call, Response<GioHang> response) {
-//
-//            }
-//
-//            @Override
-//            public void onFailure(Call<GioHang> call, Throwable t) {
-//
-//            }
-//        });
-//    }
+    private void addDataGioHang() {
+        SharedPreferences sp1 = getApplicationContext().getSharedPreferences("Login", Context.MODE_PRIVATE);
+        String token = sp1.getString("token","");
+
+        String productId = sanPham.getId();
+        String ten = tv_tensp_chitiet.getText().toString();
+        int gia = Integer.parseInt(tv_gia_chitiet.getText().toString());
+        int qty = Integer.parseInt(tv_soluong_sp.getText().toString());
+        tonggia = sanPham.getGiasanpham() * soLuong;
+
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl("https://adminshop68.herokuapp.com/api/")
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+        ApiService apiService = retrofit.create(ApiService.class);
+//                products = new Products(productId,qty);
+        product = new Product(productId,ten,gia,qty,tonggia);
+        Log.e("aaa","giohang: "+tonggia);
+        Call<Product> call = apiService.postAddCart(token, product);
+        call.enqueue(new Callback<Product>() {
+            @Override
+            public void onResponse(Call<Product> call, Response<Product> response) {
+                if (response.isSuccessful())
+                {
+                    btn_add_giohang.setEnabled(false);
+                    Toast.makeText(ChiTietActivity.this, "Thêm thành công", Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<Product> call, Throwable t) {
+
+            }
+        });
+    }
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         if (item.getItemId() == android.R.id.home) {

@@ -4,6 +4,7 @@ import com.poly.onlineshopping.model.Banner;
 import com.poly.onlineshopping.model.DanhMuc;
 import com.poly.onlineshopping.model.DongHo;
 import com.poly.onlineshopping.model.GioHang;
+import com.poly.onlineshopping.model.Product;
 import com.poly.onlineshopping.model.SanPham;
 import com.poly.onlineshopping.model.Users;
 
@@ -13,7 +14,6 @@ import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.GET;
 import retrofit2.http.Header;
-import retrofit2.http.Headers;
 import retrofit2.http.POST;
 import retrofit2.http.PUT;
 
@@ -44,11 +44,14 @@ public interface ApiService {
     Call<List<Banner>> getBanner();
 
     @POST("giohang/themgiohang")
-    Call<GioHang> postAddCart(@Header("Authorization") String authtoken,@Body GioHang gioHang);
+    Call<Product> postAddCart(@Header("Authorization") String authtoken, @Body Product product);
 
     //get profile
     @GET("users/profile")
     Call<Users> getProfile(@Header("Authorization") String authtoken);
     @PUT("users/edits")
     Call<Users> postEditUser(@Header("Authorization") String authtoken,@Body Users users);
+
+    @GET("giohang/list")
+    Call<GioHang> getCart(@Header("Authorization") String authtoken);
 }

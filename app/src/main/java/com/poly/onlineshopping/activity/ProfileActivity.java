@@ -69,7 +69,7 @@ public class ProfileActivity extends AppCompatActivity {
                 progressBar.setVisibility(View.VISIBLE);
 
                 Retrofit retrofit = new Retrofit.Builder()
-                        .baseUrl("http://192.168.10.73:3000/")
+                        .baseUrl("https://adminshop68.herokuapp.com/")
                         .addConverterFactory(GsonConverterFactory.create())
                         .build();
                 ApiService apiService = retrofit.create(ApiService.class);
@@ -99,7 +99,7 @@ public class ProfileActivity extends AppCompatActivity {
     }
     private void getProfile() {
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://192.168.10.73:3000/api/")
+                .baseUrl("https://adminshop68.herokuapp.com/api/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
         ApiService apiService = retrofit.create(ApiService.class);

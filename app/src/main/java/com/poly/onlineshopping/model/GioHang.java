@@ -1,19 +1,36 @@
 package com.poly.onlineshopping.model;
 
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
+
+import java.util.ArrayList;
+
 public class GioHang {
-    public String idUser;
-    public Products products;
+    @SerializedName("_id")
+    @Expose
+    private String id;
+    @SerializedName("idUser")
+    @Expose
+    private String idUser;
+    @SerializedName("products")
+    @Expose
+    private ArrayList<Product> products;
 
     public GioHang() {
     }
 
-    public GioHang(String idUser, Products products) {
+    public GioHang(String id, String idUser, ArrayList<Product> products) {
+        this.id = id;
         this.idUser = idUser;
         this.products = products;
     }
 
-    public GioHang(Products products) {
-        this.products = products;
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getIdUser() {
@@ -24,11 +41,11 @@ public class GioHang {
         this.idUser = idUser;
     }
 
-    public Products getProducts() {
+    public ArrayList<Product> getProducts() {
         return products;
     }
 
-    public void setProducts(Products products) {
+    public void setProducts(ArrayList<Product> products) {
         this.products = products;
     }
 }
