@@ -13,7 +13,10 @@ import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.http.Body;
+import retrofit2.http.DELETE;
+import retrofit2.http.Field;
 import retrofit2.http.GET;
+import retrofit2.http.HTTP;
 import retrofit2.http.Header;
 import retrofit2.http.POST;
 import retrofit2.http.PUT;
@@ -56,9 +59,15 @@ public interface ApiService {
     @GET("giohang/list")
     Call<GioHang> getCart(@Header("Authorization") String authtoken);
 
+    @HTTP(method = "DELETE", path = "delete", hasBody = true)
+    Call<Product> deleteCart(@Header("Authorization") String authtoken, @Body Product productId);
+
     @POST("add")
     Call<DatHang> postOrder(@Header("Authorization") String authtoken, @Body DatHang datHang);
+    @DELETE("delete")
+    Call<GioHang> delCart(@Header("Authorization") String authtoken);
 
     @GET("list")
     Call<List<DatHang>> getOrder(@Header("Authorization") String authtoken);
+
 }

@@ -43,7 +43,12 @@ public class Users {
         this.diachi = diachi;
     }
 
-    public Users(String id, String name, String email, String sdt, String diachi) {
+    public Users(String ten, String email, String password, String sodienthoai, String diachi) {
+        this.ten = ten;
+        this.email = email;
+        this.password = password;
+        this.sodienthoai = sodienthoai;
+        this.diachi = diachi;
     }
 
     public String get_id() {

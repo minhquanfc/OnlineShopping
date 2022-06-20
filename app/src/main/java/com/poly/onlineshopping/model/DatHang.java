@@ -8,64 +8,59 @@ import java.util.ArrayList;
 
 public class DatHang implements Serializable {
 
-    @SerializedName("idUser")
-    @Expose
-    private String idUser;
-    @SerializedName("hoten")
-    @Expose
-    private String hoten;
-    @SerializedName("sodienthoai")
-    @Expose
-    private String sodienthoai;
-    @SerializedName("diachi")
-    @Expose
-    private String diachi;
-    @SerializedName("ngaymua")
-    @Expose
-    private String ngaymua;
-    @SerializedName("tongtien")
-    @Expose
-    private Integer tongtien;
-    @SerializedName("trangthai")
-    @Expose
-    private String trangthai;
-    @SerializedName("products")
-    @Expose
-    private ArrayList<Product> products;
     @SerializedName("_id")
     @Expose
-    private String id;
+    public String id;
+    public String idUser;
+    public String hoTen;
+    public String soDienthoai;
+    public String diaChi;
+    public String ngayMua;
+    public int soLuong;
+    public int tongTien;
+    public String trangThai;
+    public ArrayList<Product> products;
 
-    public DatHang(String idUser, String hoten, String sodienthoai, String diachi, String ngaymua, Integer tongtien, String trangthai, ArrayList<Product> products, String id) {
-        this.idUser = idUser;
-        this.hoten = hoten;
-        this.sodienthoai = sodienthoai;
-        this.diachi = diachi;
-        this.ngaymua = ngaymua;
-        this.tongtien = tongtien;
-        this.trangthai = trangthai;
-        this.products = products;
+    public DatHang(String id, String idUser, String hoTen, String soDienthoai, String diaChi, String ngayMua, int soLuong, int tongTien, String trangThai, ArrayList<Product> products) {
         this.id = id;
-    }
-
-    public DatHang(String hoten, String sodienthoai, String diachi, String ngaymua, Integer tongtien, String trangthai, ArrayList<Product> products) {
-        this.hoten = hoten;
-        this.sodienthoai = sodienthoai;
-        this.diachi = diachi;
-        this.ngaymua = ngaymua;
-        this.tongtien = tongtien;
-        this.trangthai = trangthai;
+        this.idUser = idUser;
+        this.hoTen = hoTen;
+        this.soDienthoai = soDienthoai;
+        this.diaChi = diaChi;
+        this.ngayMua = ngayMua;
+        this.soLuong = soLuong;
+        this.tongTien = tongTien;
+        this.trangThai = trangThai;
         this.products = products;
     }
 
-    public DatHang(String hoten, String sdt, String diachi, String ngaymua, int tongtien, String trangthai, Product product) {
-        this.hoten = hoten;
-        this.sodienthoai = sodienthoai;
-        this.diachi = diachi;
-        this.ngaymua = ngaymua;
-        this.tongtien = tongtien;
-        this.trangthai = trangthai;
+    public DatHang(String hoTen, String soDienthoai, String diaChi, String ngayMua, int soLuong, int tongTien, String trangThai, ArrayList<Product> products) {
+        this.hoTen = hoTen;
+        this.soDienthoai = soDienthoai;
+        this.diaChi = diaChi;
+        this.ngayMua = ngayMua;
+        this.soLuong = soLuong;
+        this.tongTien = tongTien;
+        this.trangThai = trangThai;
         this.products = products;
+    }
+
+    public DatHang(String hoTen, String soDienthoai, String diaChi, String ngayMua, int soLuong, int tongTien, String trangThai) {
+        this.hoTen = hoTen;
+        this.soDienthoai = soDienthoai;
+        this.diaChi = diaChi;
+        this.ngayMua = ngayMua;
+        this.soLuong = soLuong;
+        this.tongTien = tongTien;
+        this.trangThai = trangThai;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getIdUser() {
@@ -76,52 +71,60 @@ public class DatHang implements Serializable {
         this.idUser = idUser;
     }
 
-    public String getHoten() {
-        return hoten;
+    public String getHoTen() {
+        return hoTen;
     }
 
-    public void setHoten(String hoten) {
-        this.hoten = hoten;
+    public void setHoTen(String hoTen) {
+        this.hoTen = hoTen;
     }
 
-    public String getSodienthoai() {
-        return sodienthoai;
+    public String getSoDienthoai() {
+        return soDienthoai;
     }
 
-    public void setSodienthoai(String sodienthoai) {
-        this.sodienthoai = sodienthoai;
+    public void setSoDienthoai(String soDienthoai) {
+        this.soDienthoai = soDienthoai;
     }
 
-    public String getDiachi() {
-        return diachi;
+    public String getDiaChi() {
+        return diaChi;
     }
 
-    public void setDiachi(String diachi) {
-        this.diachi = diachi;
+    public void setDiaChi(String diaChi) {
+        this.diaChi = diaChi;
     }
 
-    public String getNgaymua() {
-        return ngaymua;
+    public String getNgayMua() {
+        return ngayMua;
     }
 
-    public void setNgaymua(String ngaymua) {
-        this.ngaymua = ngaymua;
+    public void setNgayMua(String ngayMua) {
+        this.ngayMua = ngayMua;
     }
 
-    public Integer getTongtien() {
-        return tongtien;
+    public int getSoLuong() {
+        return soLuong;
     }
 
-    public void setTongtien(Integer tongtien) {
-        this.tongtien = tongtien;
+    public void setSoLuong(int soLuong) {
+        this.soLuong = soLuong;
     }
 
-    public String getTrangthai() {
-        return trangthai;
+    public int getTongTien() {
+        return tongTien;
     }
 
-    public void setTrangthai(String trangthai) {
-        this.trangthai = trangthai;
+    public void setTongTien(int tongTien) {
+        this.tongTien = tongTien;
+    }
+
+    public String getTrangThai() {
+        return trangThai;
+    }
+
+    public void setTrangThai(String trangThai) {
+        this.trangThai = trangThai;
     }
 
     public ArrayList<Product> getProducts() {
@@ -130,13 +133,5 @@ public class DatHang implements Serializable {
 
     public void setProducts(ArrayList<Product> products) {
         this.products = products;
-    }
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
     }
 }

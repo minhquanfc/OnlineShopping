@@ -39,9 +39,9 @@ public class DonHangAdapter extends RecyclerView.Adapter<DonHangHolder>{
         DatHang donHang = datHangList.get(position);
         holder.tv_ten_donhang.setText("Mã đơn: "+donHang.getId());
         DecimalFormat decimalFormat = new DecimalFormat("###,###,###");
-        holder.tv_gia_donhang.setText("Thành tiền : "+decimalFormat.format(donHang.getTongtien()));
-//        holder.tv_soluong_donhang.setText(String.valueOf(donHang.getSoLuong())+" sản phẩm");
-        holder.tv_trangthai.setText(donHang.getTrangthai());
+        holder.tv_gia_donhang.setText("Thành tiền : "+decimalFormat.format(donHang.getTongTien()));
+        holder.tv_soluong_donhang.setText(String.valueOf(donHang.getSoLuong())+" sản phẩm");
+        holder.tv_trangthai.setText(donHang.getTrangThai());
 //        Glide.with(context).load(gioHang.getAnh()).into(holder.img_sp_donhang);
         holder.click_donhang.setOnClickListener(new View.OnClickListener() {
             @Override

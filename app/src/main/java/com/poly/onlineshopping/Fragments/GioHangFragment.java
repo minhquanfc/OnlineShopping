@@ -23,6 +23,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.poly.onlineshopping.R;
+import com.poly.onlineshopping.activity.LoadActivity;
 import com.poly.onlineshopping.activity.ProfileActivity;
 import com.poly.onlineshopping.adapter.GioHangAdapter;
 import com.poly.onlineshopping.api.ApiService;
@@ -48,6 +49,7 @@ public class GioHangFragment extends Fragment {
     Button btn_thanhtoan;
     List<Product> productList;
     GioHangAdapter adapter;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -90,48 +92,41 @@ public class GioHangFragment extends Fragment {
     }
 
     private void addDataOrder() {
-//        Date date = new Date(System.currentTimeMillis());
-//        String hoten = tv_ten.getText().toString();
-//        String sdt = tv_sdt.getText().toString();
-//        String diachi = tv_diachi.getText().toString();
-//        String trangthai = "Đang xử lý";
-//        String ngaymua = date.toString();
-//        int tongtien = Integer.valueOf(tv_tongtien.getText().toString());
-
-//        Log.d("aaa","ten"+hoten);
-//        Log.d("aaa","ten"+sdt);
-//        Log.d("aaa","ten"+diachi);
-//        Log.d("aaa","ten"+trangthai);
-//        Log.d("aaa","ten"+ngaymua);
-//        Log.d("aaa","ten"+tongtien);
+        Date date = new Date(System.currentTimeMillis());
+        String hoten = tv_ten.getText().toString();
+        String sodienthoai = tv_sdt.getText().toString();
+        Log.d("aaa", "a: " + sodienthoai);
+        String diachi = tv_diachi.getText().toString();
+        String trangthai = "Đang xử lý";
+        String ngaymua = date.toString();
+        int num = 0;
         for (Product product : productList) {
-//            Log.d("aaa","list"+product);
-            Date date = new Date(System.currentTimeMillis());
-            String hoten = tv_ten.getText().toString();
-            String sdt = tv_sdt.getText().toString();
-            String diachi = tv_diachi.getText().toString();
-            String trangthai = "Đang xử lý";
-            String ngaymua = date.toString();
-            int tongtien = Integer.valueOf(tv_tongtien.getText().toString());
+            num = num + product.getSoluong();
+        }
+        Log.d("aaa","aaa"+num);
+        int tongtien = Integer.valueOf(tv_tongtien.getText().toString());
+        for (Product product : productList) {
 
             SharedPreferences sp1 = getActivity().getApplicationContext().getSharedPreferences("Login", Context.MODE_PRIVATE);
-            String token = sp1.getString("token","");
+            String token = sp1.getString("token", "");
 
             Retrofit retrofit = new Retrofit.Builder()
-                    .baseUrl("http://192.168.10.73:3000/api/order/")
+                    .baseUrl("https://adminshop68.herokuapp.com/api/order/")
                     .addConverterFactory(GsonConverterFactory.create())
                     .build();
             ApiService apiService = retrofit.create(ApiService.class);
-            DatHang datHang = new DatHang(hoten,sdt,diachi,ngaymua,tongtien,trangthai,product);
-            Call<DatHang> call = apiService.postOrder(token,datHang);
+            DatHang datHang = new DatHang(hoten, sodienthoai, diachi, ngaymua,num, tongtien, trangthai);
+            Call<DatHang> call = apiService.postOrder(token, datHang);
             call.enqueue(new Callback<DatHang>() {
                 @Override
                 public void onResponse(Call<DatHang> call, Response<DatHang> response) {
-                    if (response.isSuccessful()){
+                    if (response.isSuccessful()) {
                         productList.clear();
                         adapter.notifyDataSetChanged();
-                        Toast.makeText(getContext(), "Ok", Toast.LENGTH_SHORT).show();
-                    }else {
+                        Xoacart();
+                        Intent intent = new Intent(getContext(), LoadActivity.class);
+                        getContext().startActivity(intent);
+                    } else {
                         Toast.makeText(getContext(), "No", Toast.LENGTH_SHORT).show();
                     }
                 }
@@ -143,6 +138,29 @@ public class GioHangFragment extends Fragment {
             });
 
         }
+    }
+
+    private void Xoacart() {
+        SharedPreferences sp1 = getActivity().getApplicationContext().getSharedPreferences("Login", Context.MODE_PRIVATE);
+        String token = sp1.getString("token", "");
+
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl("https://adminshop68.herokuapp.com/api/order/")
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+        ApiService apiService = retrofit.create(ApiService.class);
+        Call<GioHang> call = apiService.delCart(token);
+        call.enqueue(new Callback<GioHang>() {
+            @Override
+            public void onResponse(Call<GioHang> call, Response<GioHang> response) {
+
+            }
+
+            @Override
+            public void onFailure(Call<GioHang> call, Throwable t) {
+
+            }
+        });
     }
 
     public BroadcastReceiver broadcastReceiver = new BroadcastReceiver() {
@@ -161,8 +179,8 @@ public class GioHangFragment extends Fragment {
         recyclerView.setLayoutManager(layoutManagerSanPham);
 
         SharedPreferences sp1 = getActivity().getApplicationContext().getSharedPreferences("Login", Context.MODE_PRIVATE);
-        String token = sp1.getString("token","");
-        Log.e("aaa","token: "+token);
+        String token = sp1.getString("token", "");
+        Log.e("aaa", "token: " + token);
 
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl("https://adminshop68.herokuapp.com/api/")
@@ -173,10 +191,10 @@ public class GioHangFragment extends Fragment {
         call.enqueue(new Callback<GioHang>() {
             @Override
             public void onResponse(Call<GioHang> call, Response<GioHang> response) {
-                if (response.isSuccessful()){
+                if (response.isSuccessful()) {
                     GioHang gioHang = response.body();
                     List<Product> datas = gioHang.getProducts();
-                    for (Product data:datas){
+                    for (Product data : datas) {
                         productList.add(data);
                         adapter.notifyDataSetChanged();
                     }
@@ -192,7 +210,7 @@ public class GioHangFragment extends Fragment {
 
     private void getProfile() {
         SharedPreferences sp1 = getActivity().getApplicationContext().getSharedPreferences("Login", Context.MODE_PRIVATE);
-        String token = sp1.getString("token","");
+        String token = sp1.getString("token", "");
 
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl("https://adminshop68.herokuapp.com/api/")
@@ -203,11 +221,11 @@ public class GioHangFragment extends Fragment {
         call.enqueue(new Callback<Users>() {
             @Override
             public void onResponse(Call<Users> call, Response<Users> response) {
-                if (response.isSuccessful()){
+                if (response.isSuccessful()) {
                     tv_ten.setText(response.body().getTen());
                     tv_sdt.setText(response.body().getSodienthoai());
                     tv_diachi.setText(response.body().getDiachi());
-                }else {
+                } else {
                     Toast.makeText(getContext(), "not connect", Toast.LENGTH_SHORT).show();
                 }
             }

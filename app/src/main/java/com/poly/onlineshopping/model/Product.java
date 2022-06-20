@@ -20,6 +20,10 @@ public class Product {
         this.tongtien = tongtien;
     }
 
+    public Product(String productId) {
+        this.productId = productId;
+    }
+
     public String getProductId() {
         return productId;
     }

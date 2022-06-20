@@ -42,14 +42,14 @@ public class InfoDonHangActivity extends AppCompatActivity {
         Intent intent = getIntent();
         String id = intent.getStringExtra("id");
         if ( donHang != null) {
-            tv_ten_nguoi_nhan.setText(donHang.getHoten());
-            tv_sdt_donhang.setText(donHang.getSodienthoai());
-            tv_diachi_donhang.setText(donHang.getDiachi());
+            tv_ten_nguoi_nhan.setText(donHang.getHoTen());
+            tv_sdt_donhang.setText(donHang.getSoDienthoai());
+            tv_diachi_donhang.setText(donHang.getDiaChi());
             DecimalFormat decimalFormat = new DecimalFormat("###,###,###");
-            tv_thanhtien_donhang.setText(decimalFormat.format(donHang.getTongtien())+"đ");
-//            tv_soluong_donhang.setText(String.valueOf(donHang.getSoLuong()));
-            tv_trangthai_donhang.setText(donHang.getTrangthai());
-            tv_time_donhang.setText(donHang.getNgaymua());
+            tv_thanhtien_donhang.setText(decimalFormat.format(donHang.getTongTien())+"đ");
+            tv_soluong_donhang.setText(String.valueOf(donHang.getSoLuong()));
+            tv_trangthai_donhang.setText(donHang.getTrangThai());
+            tv_time_donhang.setText(donHang.getNgayMua());
         }
     }
     @Override
