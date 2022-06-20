@@ -166,7 +166,10 @@
                 android:layout_marginLeft="80dp"
                 android:layout_marginRight="20dp"
                 android:backgroundTint="@color/mau_xanh"
-                android:text="Thanh toán" />
+                android:text="Thanh toán"
+                android:fontFamily="@font/lexenddeca"
+                android:textAllCaps="false"
+                android:textColor="@color/white"/>
         </RelativeLayout>
     </RelativeLayout>
 </RelativeLayout>

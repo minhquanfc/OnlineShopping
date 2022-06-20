@@ -82,12 +82,17 @@ public class GioHangFragment extends Fragment {
 
         LocalBroadcastManager.getInstance(getContext()).registerReceiver(broadcastReceiver, new IntentFilter("Tongtien"));
 
-        btn_thanhtoan.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                addDataOrder();
-            }
-        });
+        if (productList == null){
+            btn_thanhtoan.setEnabled(false);
+            Toast.makeText(getContext(), "Vui lòng thêm", Toast.LENGTH_SHORT).show();
+        }else {
+            btn_thanhtoan.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    addDataOrder();
+                }
+            });
+        }
         return view;
     }
 
@@ -115,6 +120,7 @@ public class GioHangFragment extends Fragment {
                     .addConverterFactory(GsonConverterFactory.create())
                     .build();
             ApiService apiService = retrofit.create(ApiService.class);
+
             DatHang datHang = new DatHang(hoten, sodienthoai, diachi, ngaymua,num, tongtien, trangthai);
             Call<DatHang> call = apiService.postOrder(token, datHang);
             call.enqueue(new Callback<DatHang>() {
