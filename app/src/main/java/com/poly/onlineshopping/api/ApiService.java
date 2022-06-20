@@ -2,6 +2,7 @@ package com.poly.onlineshopping.api;
 
 import com.poly.onlineshopping.model.Banner;
 import com.poly.onlineshopping.model.DanhMuc;
+import com.poly.onlineshopping.model.DatHang;
 import com.poly.onlineshopping.model.DongHo;
 import com.poly.onlineshopping.model.GioHang;
 import com.poly.onlineshopping.model.Product;
@@ -54,4 +55,10 @@ public interface ApiService {
 
     @GET("giohang/list")
     Call<GioHang> getCart(@Header("Authorization") String authtoken);
+
+    @POST("add")
+    Call<DatHang> postOrder(@Header("Authorization") String authtoken, @Body DatHang datHang);
+
+    @GET("list")
+    Call<List<DatHang>> getOrder(@Header("Authorization") String authtoken);
 }

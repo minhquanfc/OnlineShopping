@@ -123,6 +123,7 @@ public class ChiTietActivity extends AppCompatActivity {
         String productId = sanPham.getId();
         String ten = tv_tensp_chitiet.getText().toString();
         int gia = Integer.parseInt(tv_gia_chitiet.getText().toString());
+        String anh = sanPham.getAnhsanpham();
         int qty = Integer.parseInt(tv_soluong_sp.getText().toString());
         tonggia = sanPham.getGiasanpham() * soLuong;
 
@@ -132,7 +133,7 @@ public class ChiTietActivity extends AppCompatActivity {
                 .build();
         ApiService apiService = retrofit.create(ApiService.class);
 //                products = new Products(productId,qty);
-        product = new Product(productId,ten,gia,qty,tonggia);
+        product = new Product(productId,ten,gia,qty,anh,tonggia);
         Log.e("aaa","giohang: "+tonggia);
         Call<Product> call = apiService.postAddCart(token, product);
         call.enqueue(new Callback<Product>() {

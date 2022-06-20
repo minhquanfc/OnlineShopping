@@ -102,7 +102,7 @@ public class TaiKhoanFragment extends Fragment {
                     Ed.putString("id",response.body().get_id());
                     Log.d("aaa","id:"+response.body().get_id());
                 }else {
-                    Toast.makeText(getContext(), "not connect", Toast.LENGTH_SHORT).show();
+//                    Toast.makeText(getContext(), "not connect", Toast.LENGTH_SHORT).show();
                 }
             }
 

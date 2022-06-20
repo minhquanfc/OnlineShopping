@@ -26,10 +26,12 @@ import com.poly.onlineshopping.R;
 import com.poly.onlineshopping.activity.ProfileActivity;
 import com.poly.onlineshopping.adapter.GioHangAdapter;
 import com.poly.onlineshopping.api.ApiService;
+import com.poly.onlineshopping.model.DatHang;
 import com.poly.onlineshopping.model.GioHang;
 import com.poly.onlineshopping.model.Product;
 import com.poly.onlineshopping.model.Users;
 
+import java.sql.Date;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -45,6 +47,7 @@ public class GioHangFragment extends Fragment {
     TextView tv_thaydiachi, tv_tongtien, tv_diachi, tv_ten, tv_sdt;
     Button btn_thanhtoan;
     List<Product> productList;
+    GioHangAdapter adapter;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -59,6 +62,7 @@ public class GioHangFragment extends Fragment {
         tv_sdt = view.findViewById(R.id.tv_sdt);
         productList = new ArrayList<>();
 
+
 //        gioHangList.add(new GioHang("aaa","aaa",1000,1,1000));
 //        gioHangList.add(new GioHang("aaa","aaa",1000,1,1000));
 //        gioHangList.add(new GioHang("aaa","aaa",1000,1,1000));
@@ -72,7 +76,86 @@ public class GioHangFragment extends Fragment {
                 startActivity(intent);
             }
         });
-        GioHangAdapter adapter = new GioHangAdapter(getContext(), productList);
+        getData();
+
+        LocalBroadcastManager.getInstance(getContext()).registerReceiver(broadcastReceiver, new IntentFilter("Tongtien"));
+
+        btn_thanhtoan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                addDataOrder();
+            }
+        });
+        return view;
+    }
+
+    private void addDataOrder() {
+//        Date date = new Date(System.currentTimeMillis());
+//        String hoten = tv_ten.getText().toString();
+//        String sdt = tv_sdt.getText().toString();
+//        String diachi = tv_diachi.getText().toString();
+//        String trangthai = "Đang xử lý";
+//        String ngaymua = date.toString();
+//        int tongtien = Integer.valueOf(tv_tongtien.getText().toString());
+
+//        Log.d("aaa","ten"+hoten);
+//        Log.d("aaa","ten"+sdt);
+//        Log.d("aaa","ten"+diachi);
+//        Log.d("aaa","ten"+trangthai);
+//        Log.d("aaa","ten"+ngaymua);
+//        Log.d("aaa","ten"+tongtien);
+        for (Product product : productList) {
+//            Log.d("aaa","list"+product);
+            Date date = new Date(System.currentTimeMillis());
+            String hoten = tv_ten.getText().toString();
+            String sdt = tv_sdt.getText().toString();
+            String diachi = tv_diachi.getText().toString();
+            String trangthai = "Đang xử lý";
+            String ngaymua = date.toString();
+            int tongtien = Integer.valueOf(tv_tongtien.getText().toString());
+
+            SharedPreferences sp1 = getActivity().getApplicationContext().getSharedPreferences("Login", Context.MODE_PRIVATE);
+            String token = sp1.getString("token","");
+
+            Retrofit retrofit = new Retrofit.Builder()
+                    .baseUrl("http://192.168.10.73:3000/api/order/")
+                    .addConverterFactory(GsonConverterFactory.create())
+                    .build();
+            ApiService apiService = retrofit.create(ApiService.class);
+            DatHang datHang = new DatHang(hoten,sdt,diachi,ngaymua,tongtien,trangthai,product);
+            Call<DatHang> call = apiService.postOrder(token,datHang);
+            call.enqueue(new Callback<DatHang>() {
+                @Override
+                public void onResponse(Call<DatHang> call, Response<DatHang> response) {
+                    if (response.isSuccessful()){
+                        productList.clear();
+                        adapter.notifyDataSetChanged();
+                        Toast.makeText(getContext(), "Ok", Toast.LENGTH_SHORT).show();
+                    }else {
+                        Toast.makeText(getContext(), "No", Toast.LENGTH_SHORT).show();
+                    }
+                }
+
+                @Override
+                public void onFailure(Call<DatHang> call, Throwable t) {
+
+                }
+            });
+
+        }
+    }
+
+    public BroadcastReceiver broadcastReceiver = new BroadcastReceiver() {
+        @RequiresApi(api = Build.VERSION_CODES.N)
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            int tongtien = intent.getIntExtra("tongtien", 0);
+            tv_tongtien.setText(tongtien + "");
+        }
+    };
+
+    private void getData() {
+        adapter = new GioHangAdapter(getContext(), productList);
         recyclerView.setAdapter(adapter);
         LinearLayoutManager layoutManagerSanPham = new LinearLayoutManager(getContext(), RecyclerView.VERTICAL, false);
         recyclerView.setLayoutManager(layoutManagerSanPham);
@@ -105,29 +188,6 @@ public class GioHangFragment extends Fragment {
 
             }
         });
-
-        getData();
-
-        LocalBroadcastManager.getInstance(getContext()).registerReceiver(broadcastReceiver, new IntentFilter("Tongtien"));
-
-        addDataOrder();
-        return view;
-    }
-
-    private void addDataOrder() {
-    }
-
-    public BroadcastReceiver broadcastReceiver = new BroadcastReceiver() {
-        @RequiresApi(api = Build.VERSION_CODES.N)
-        @Override
-        public void onReceive(Context context, Intent intent) {
-            int tongtien = intent.getIntExtra("tongtien", 0);
-            tv_tongtien.setText(tongtien + "");
-        }
-    };
-
-    private void getData() {
-
     }
 
     private void getProfile() {

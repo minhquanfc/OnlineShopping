@@ -5,16 +5,18 @@ import java.util.List;
 public class Product {
     public String productId,tensanpham;
     public int giasanpham,soluong;
+    private String anhsanpham;
     public int tongtien;
 
     public Product() {
     }
 
-    public Product(String productId, String tensanpham, int giasanpham, int soluong, int tongtien) {
+    public Product(String productId, String tensanpham, int giasanpham, int soluong, String anhsanpham, int tongtien) {
         this.productId = productId;
         this.tensanpham = tensanpham;
         this.giasanpham = giasanpham;
         this.soluong = soluong;
+        this.anhsanpham = anhsanpham;
         this.tongtien = tongtien;
     }
 
@@ -48,6 +50,14 @@ public class Product {
 
     public void setSoluong(int soluong) {
         this.soluong = soluong;
+    }
+
+    public String getAnhsanpham() {
+        return anhsanpham;
+    }
+
+    public void setAnhsanpham(String anhsanpham) {
+        this.anhsanpham = anhsanpham;
     }
 
     public int getTongtien() {
