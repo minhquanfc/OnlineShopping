@@ -1,3 +1,3 @@
 # OnlineShopping
 App client ban hang
-Sử dung firebase
+Sử dung api
