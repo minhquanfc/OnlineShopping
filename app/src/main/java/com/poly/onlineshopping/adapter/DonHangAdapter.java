@@ -47,7 +47,6 @@ public class DonHangAdapter extends RecyclerView.Adapter<DonHangHolder>{
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(context, InfoDonHangActivity.class);
-                intent.putExtra("donhang",datHangList.get(position));
                 intent.putExtra("id",donHang.getId());
                 context.startActivity(intent);
             }

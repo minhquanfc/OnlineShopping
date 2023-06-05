@@ -35,7 +35,7 @@ public class DanhSachActivity extends AppCompatActivity {
         setContentView(R.layout.activity_danh_sach);
         recyclerView =findViewById(R.id.rcview_list_sp);
         toolbar =findViewById(R.id.toolbar_sanpham);
-        String type = getIntent().getStringExtra("type");
+        String type  = getIntent().getStringExtra("type");
 
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);

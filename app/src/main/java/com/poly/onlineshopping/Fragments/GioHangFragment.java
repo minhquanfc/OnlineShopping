@@ -200,6 +200,7 @@ public class GioHangFragment extends Fragment {
                 if (response.isSuccessful()) {
                     GioHang gioHang = response.body();
                     List<Product> datas = gioHang.getProducts();
+                    //dung for de doc array
                     for (Product data : datas) {
                         productList.add(data);
                         adapter.notifyDataSetChanged();

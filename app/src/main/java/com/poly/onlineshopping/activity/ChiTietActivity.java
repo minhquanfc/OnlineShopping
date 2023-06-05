@@ -115,17 +115,26 @@ public class ChiTietActivity extends AppCompatActivity {
             tv_mota_chitiet.setText(dongHo.getMota());
         }
     }
-
+    String productId,ten,anh;
+    int gia,qty;
     private void addDataGioHang() {
         SharedPreferences sp1 = getApplicationContext().getSharedPreferences("Login", Context.MODE_PRIVATE);
         String token = sp1.getString("token","");
-
-        String productId = sanPham.getId();
-        String ten = tv_tensp_chitiet.getText().toString();
-        int gia = Integer.parseInt(tv_gia_chitiet.getText().toString());
-        String anh = sanPham.getAnhsanpham();
-        int qty = Integer.parseInt(tv_soluong_sp.getText().toString());
-        tonggia = sanPham.getGiasanpham() * soLuong;
+        if (sanPham !=null){
+            productId = sanPham.getId();
+            ten = tv_tensp_chitiet.getText().toString();
+             gia = Integer.parseInt(tv_gia_chitiet.getText().toString());
+             anh = sanPham.getAnhsanpham();
+             qty = Integer.parseInt(tv_soluong_sp.getText().toString());
+            tonggia = sanPham.getGiasanpham() * soLuong;
+        } else {
+             productId = dongHo.getId();
+             ten = tv_tensp_chitiet.getText().toString();
+             gia = Integer.parseInt(tv_gia_chitiet.getText().toString());
+             anh = dongHo.getAnhsanpham();
+             qty = Integer.parseInt(tv_soluong_sp.getText().toString());
+            tonggia = dongHo.getGiasanpham() * soLuong;
+        }
 
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl("https://adminshop68.herokuapp.com/api/")

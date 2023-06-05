@@ -21,9 +21,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:background="@color/mau_xanh"
-                app:titleTextColor="@color/white"
                 app:title="Chi tiết"
-                app:titleTextAppearance="@style/Toolbar.TitleText"/>
+                app:titleTextAppearance="@style/Toolbar.TitleText"
+                app:titleTextColor="@color/white" />
 
             <ImageView
                 android:id="@+id/img_sp_chitiet"

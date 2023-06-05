@@ -6,7 +6,7 @@ import com.google.gson.annotations.SerializedName;
 import java.io.Serializable;
 import java.util.ArrayList;
 
-public class DatHang implements Serializable {
+public class DatHang {
 
     @SerializedName("_id")
     @Expose
